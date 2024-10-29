@@ -1,0 +1,18 @@
+{
+    "home": "Home",
+    "about": "About",
+    "project": "Projects",
+    "experience": "Experiences",
+    "skills": "Skills",
+    "talkIt": "Let's talk !",
+    "paragraphFooter": "I'm always up for a chat, whether it be about projects, new opportunities, or just about fun stuff ! Feel free to contact me on social networks.",
+    "iAm": "I am",
+    "iAmDev": "and I'm a developer.", 
+    "craftSite": "I design websites and web or mobile applications, from ",
+    "of": ", to ",
+    "andOf": " and the ",
+    "andOf2": " and from ",
+    "workNow": "I'm currently working as a full-stack web developer for ",
+    "development": "development",
+    "deployment": "deployment"
+}
