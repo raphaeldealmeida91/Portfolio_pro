@@ -15,7 +15,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { useTranslation } from "react-i18next";
 import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
@@ -31,17 +31,46 @@ const views = [
   { text: "experience", icon: <WorkIcon />, nav: "/experience" },
 ];
 
+const getPreferredTheme = () => {
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  return prefersDark ? "dark" : "light";
+};
+
 const Navigation = () => {
   const { mode, setMode } = useColorScheme();
+  const [defaultMode, setDefaultMode] = useState<"dark" | "light" | null>(
+    getPreferredTheme()
+  );
   const [openMenu, setOpenMenu] = useState(false);
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language);
   };
-  if (!mode) {
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = () => {
+      const newMode = mediaQuery.matches ? "dark" : "light";
+      setDefaultMode(newMode);
+      if (mode === undefined) {
+        setMode(newMode);
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, [mode, setMode]);
+
+  if (mode === undefined) {
+    if (defaultMode) {
+      setMode(defaultMode);
+    } else {
+      setMode("system");
+    }
     return null;
   }
+
   return (
     <Box
       sx={{
