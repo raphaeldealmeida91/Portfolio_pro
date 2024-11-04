@@ -22,6 +22,7 @@ import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import WorkIcon from "@mui/icons-material/Work";
 import WalletIcon from "@mui/icons-material/Wallet";
 import { useNavigate } from "react-router-dom";
+import EmailIcon from "@mui/icons-material/Email";
 
 const views = [
   { text: "home", icon: <HomeIcon />, nav: "/" },
@@ -29,6 +30,7 @@ const views = [
   { text: "skills", icon: <WalletIcon />, nav: "/skills" },
   { text: "project", icon: <AccountTreeIcon />, nav: "/projects" },
   { text: "experience", icon: <WorkIcon />, nav: "/experience" },
+  { text: "Contact", icon: <EmailIcon />, nav: "/contact" },
 ];
 
 const getPreferredTheme = () => {

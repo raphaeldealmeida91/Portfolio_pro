@@ -7,6 +7,7 @@ import About from "./views/About";
 import Skills from "./views/Skills";
 import Projects from "./views/Projects";
 import Experience from "./views/Experience";
+import Contact from "./views/Contact";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/experience" element={<Experience />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Box
         sx={{

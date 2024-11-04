@@ -1,6 +1,13 @@
-import { Box, Divider, Typography, useColorScheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  Typography,
+  useColorScheme,
+} from "@mui/material";
 import Me from "../assets/raphael_de_almeida.webp";
 import { useTranslation } from "react-i18next";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
 
 const Home = () => {
   const { mode } = useColorScheme();
@@ -114,12 +121,24 @@ const Home = () => {
             sx={{
               "& span": { fontWeight: "bold" },
               width: { xs: "70%", md: "80%" },
+              mb: 3,
             }}
             variant="h6"
           >
             {t("workNow")}
             <span>Acensi</span>.
           </Typography>
+          <Button
+            startIcon={<FileDownloadIcon />}
+            variant="contained"
+            sx={{
+              backgroundColor: "rgb(76, 86, 106)",
+              color: "rgb(216, 222, 233)",
+              textTransform: "initial",
+            }}
+          >
+            Mon CV
+          </Button>
         </Box>
       </Box>
     </>
