@@ -89,7 +89,7 @@ const Projects = () => {
           width: "100%",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: isDark ? "#282828" : "#F9F9F9",
+          backgroundColor: isDark ? "#282828" : "#F1F1F1",
           padding: "60px 0",
           flexDirection: "column",
         }}
@@ -120,7 +120,7 @@ const Projects = () => {
           sx={{
             width: "80%",
             display: "flex",
-            backgroundColor: isDark ? "#3f3f3f" : "#F2F2F2",
+            backgroundColor: isDark ? "#3f3f3f" : "#FFF",
             borderRadius: "8px",
             justifyContent: "space-between",
             alignItems: "center",
@@ -166,7 +166,7 @@ const Projects = () => {
                   key={index}
                   sx={{
                     ...BoxSkills,
-                    backgroundColor: isDark ? "#575757" : "#FFF",
+                    backgroundColor: isDark ? "#575757" : "#F5F5F5",
                   }}
                 >
                   <Typography
@@ -209,7 +209,7 @@ const Projects = () => {
           sx={{
             width: "80%",
             display: "flex",
-            backgroundColor: isDark ? "#3f3f3f" : "#F2F2F2",
+            backgroundColor: isDark ? "#3f3f3f" : "#FFF",
             borderRadius: "8px",
             justifyContent: "space-between",
             alignItems: "center",
@@ -285,7 +285,7 @@ const Projects = () => {
                   key={index}
                   sx={{
                     ...BoxSkills,
-                    backgroundColor: isDark ? "#575757" : "#FFF",
+                    backgroundColor: isDark ? "#575757" : "#F5F5F5",
                   }}
                 >
                   <Typography
@@ -304,7 +304,7 @@ const Projects = () => {
           sx={{
             width: "80%",
             display: "flex",
-            backgroundColor: isDark ? "#3f3f3f" : "#F2F2F2",
+            backgroundColor: isDark ? "#3f3f3f" : "#FFF",
             borderRadius: "8px",
             justifyContent: "space-between",
             alignItems: "center",
@@ -334,8 +334,15 @@ const Projects = () => {
             </Typography>
             <Typography variant="h6">2024</Typography>
             <Typography variant="body2">
-              Patterns in your life est un site permettant de tester sa
-              personnalité et de déceler ses schémas.
+              Patterns in your life est un site conçu pour vous aider à explorer
+              et identifier les schémas qui influencent votre vie. Grâce à un
+              questionnaire de 22 questions, vous pourrez évaluer la véracité
+              des énoncés par rapport à votre enfance et à votre situation
+              actuelle d’adulte. L’outil s’inspire du livre Je réinvente ma vie
+              de Janet S. Klosko et Jeffrey Young, et vise à vous offrir une
+              meilleure compréhension de vos comportements. Plongez dans une
+              introspection enrichissante et commencez à transformer votre vie
+              dès aujourd'hui !
             </Typography>
             <Box
               sx={{
@@ -350,7 +357,7 @@ const Projects = () => {
                   key={index}
                   sx={{
                     ...BoxSkills,
-                    backgroundColor: isDark ? "#575757" : "#FFF",
+                    backgroundColor: isDark ? "#575757" : "#F5F5F5",
                   }}
                 >
                   <Typography
@@ -416,7 +423,7 @@ const Projects = () => {
           sx={{
             width: "80%",
             display: "flex",
-            backgroundColor: isDark ? "#3f3f3f" : "#F2F2F2",
+            backgroundColor: isDark ? "#3f3f3f" : "#FFF",
             borderRadius: "8px",
             justifyContent: "space-between",
             alignItems: "center",
@@ -436,15 +443,39 @@ const Projects = () => {
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
               Configuration de machines AD DS, DNS, DHCP - Projet d'école
             </Typography>
-            <Typography variant="body2">
-              Active Directory est un service annuaire LDAP mis en place par
-              Microsoft pour les machines Windows Serveur. Il permet
-              d’administrer des ressources telles que les ordinateurs, des
-              dossiers de partages, mais aussi des comptes utilisateurs par
-              l’intermédiaire d’un système d’Identification/Authentification.
-              L'objectif principal d'Active Directory est de fournir des
-              services centralisés d'identification et d'authentification à un
-              réseau d'ordinateurs utilisant le système Windows.
+            <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
+              <strong>Compétences développées :</strong>
+              <ul>
+                <li>
+                  Installation et configuration d'Active Directory Domain
+                  Services (AD DS) pour la gestion des utilisateurs et des
+                  ressources.
+                </li>
+                <li>
+                  Configuration des services DNS pour la résolution de noms et
+                  l'acheminement du trafic réseau.
+                </li>
+                <li>
+                  Mise en place du service DHCP pour l'attribution dynamique des
+                  adresses IP aux clients.
+                </li>
+                <li>
+                  Gestion des stratégies de groupe (GPO) pour le contrôle
+                  centralisé des paramètres de sécurité et de configuration.
+                </li>
+                <li>
+                  Surveillance et dépannage des services AD, DNS et DHCP pour
+                  assurer leur disponibilité.
+                </li>
+                <li>
+                  Application des meilleures pratiques en matière de sécurité
+                  pour protéger l'environnement réseau.
+                </li>
+                <li>
+                  Documentation des configurations et des procédures pour les
+                  futurs administrateurs système.
+                </li>
+              </ul>
             </Typography>
           </Box>
         </Box>
@@ -452,7 +483,7 @@ const Projects = () => {
           sx={{
             width: "80%",
             display: "flex",
-            backgroundColor: isDark ? "#3f3f3f" : "#F2F2F2",
+            backgroundColor: isDark ? "#3f3f3f" : "#FFF",
             borderRadius: "8px",
             justifyContent: "space-between",
             alignItems: "center",
@@ -473,17 +504,38 @@ const Projects = () => {
               Installation et configuration ainsi que la supervision des
               machines Nagios XI. - Projet d'école
             </Typography>
-            <Typography variant="body2">
-              Nagios XI est une plateforme de supervision puissante et évolutive
-              permettant le suivi des ressources informatiques, des services et
-              des infrastructures réseau en temps réel. Utilisée principalement
-              dans des environnements IT, Nagios XI offre une interface
-              intuitive ainsi que des outils avancés de surveillance et
-              d'alerte. Elle propose une solution complète et centralisée pour
-              assurer la disponibilité et la performance des systèmes d'une
-              infrastructure. Grâce à sa capacité de personnalisation et à la
-              richesse de ses options de surveillance, Nagios XI s'avère être un
-              outil précieux pour les administrateurs réseau.
+            <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
+              <strong>Compétences développées :</strong>
+              <ul>
+                <li>
+                  Installation et configuration de Nagios XI pour la supervision
+                  des infrastructures.
+                </li>
+                <li>
+                  Mise en place de la surveillance des services réseau et des
+                  équipements matériels.
+                </li>
+                <li>
+                  Création de tableaux de bord personnalisés pour un suivi
+                  efficace des performances.
+                </li>
+                <li>
+                  Configuration des alertes et notifications pour une réponse
+                  rapide aux incidents.
+                </li>
+                <li>
+                  Analyse des journaux de supervision pour optimiser les
+                  performances et la disponibilité.
+                </li>
+                <li>
+                  Gestion des plugins Nagios pour étendre les capacités de
+                  surveillance.
+                </li>
+                <li>
+                  Élaboration de rapports sur la disponibilité et les
+                  performances des systèmes surveillés.
+                </li>
+              </ul>
             </Typography>
           </Box>
         </Box>
@@ -491,7 +543,7 @@ const Projects = () => {
           sx={{
             width: "80%",
             display: "flex",
-            backgroundColor: isDark ? "#3f3f3f" : "#F2F2F2",
+            backgroundColor: isDark ? "#3f3f3f" : "#FFF",
             borderRadius: "8px",
             justifyContent: "space-between",
             alignItems: "center",
@@ -511,20 +563,36 @@ const Projects = () => {
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
               LAMP OCS - Projet d'école
             </Typography>
-            <Typography variant="body2">
-              LAMP est une pile logicielle open source, composée de Linux,
-              Apache, MySQL et PHP, utilisée pour créer et héberger des
-              applications web dynamiques. Grâce à sa structure modulaire, elle
-              fournit une solution flexible et abordable pour le développement
-              web, adaptée aux petites et grandes entreprises.
-              <br />
-              OCS Inventory NG est un outil de gestion d’inventaire permettant
-              de suivre les équipements matériels et logiciels d’une
-              infrastructure IT. Avec des fonctionnalités d’inventaire,
-              d’alertes, de rapports et de déploiement logiciel, il facilite la
-              gestion centralisée des actifs informatiques. Sa flexibilité en
-              fait un outil précieux pour les administrateurs réseau, dans un
-              cadre scolaire ou professionnel.
+            <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
+              <strong>Compétences développées :</strong>
+              <ul>
+                <li>
+                  Installation et configuration de l'environnement LAMP (Linux,
+                  Apache, MySQL, PHP).
+                </li>
+                <li>
+                  Développement d'applications web dynamiques avec PHP et MySQL.
+                </li>
+                <li>
+                  Gestion des bases de données et optimisation des requêtes SQL.
+                </li>
+                <li>
+                  Configuration d'Apache pour l'hébergement d'applications web
+                  sécurisées.
+                </li>
+                <li>
+                  Utilisation d'OCS Inventory pour la gestion et le suivi des
+                  équipements informatiques.
+                </li>
+                <li>
+                  Mise en œuvre de la sécurité des applications web et des bases
+                  de données.
+                </li>
+                <li>
+                  Développement de solutions de sauvegarde et de récupération
+                  des données.
+                </li>
+              </ul>
             </Typography>
           </Box>
         </Box>
@@ -532,7 +600,7 @@ const Projects = () => {
           sx={{
             width: "80%",
             display: "flex",
-            backgroundColor: isDark ? "#3f3f3f" : "#F2F2F2",
+            backgroundColor: isDark ? "#3f3f3f" : "#FFF",
             borderRadius: "8px",
             justifyContent: "space-between",
             alignItems: "center",
@@ -552,15 +620,37 @@ const Projects = () => {
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
               Apache - Projet d'école
             </Typography>
-            <Typography variant="body2">
-              Apache est un serveur web open source largement utilisé pour
-              héberger des sites et des applications web. Connu pour sa
-              stabilité, sa sécurité et sa flexibilité, Apache permet de gérer
-              des requêtes HTTP et de servir des pages web aux utilisateurs.
-              Avec une grande capacité de personnalisation via des modules, il
-              prend en charge différents langages et architectures, ce qui en
-              fait un choix privilégié pour les entreprises de toutes tailles et
-              un standard dans le développement web.
+            <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
+              <strong>Compétences développées :</strong>
+              <ul>
+                <li>
+                  Installation et configuration d'Apache pour des serveurs web.
+                </li>
+                <li>
+                  Gestion des fichiers de configuration pour l'optimisation des
+                  performances.
+                </li>
+                <li>
+                  Mise en place de la sécurité avec des certificats SSL pour
+                  HTTPS.
+                </li>
+                <li>
+                  Configuration du module de réécriture d'URL pour un SEO
+                  amélioré.
+                </li>
+                <li>
+                  Application de règles de sécurité pour protéger les ressources
+                  et les données.
+                </li>
+                <li>
+                  Gestion des virtual hosts pour l'hébergement de plusieurs
+                  sites.
+                </li>
+                <li>
+                  Analyse des journaux d'accès et d'erreurs pour le débogage et
+                  l'optimisation.
+                </li>
+              </ul>
             </Typography>
           </Box>
         </Box>
@@ -568,7 +658,72 @@ const Projects = () => {
           sx={{
             width: "80%",
             display: "flex",
-            backgroundColor: isDark ? "#3f3f3f" : "#F2F2F2",
+            backgroundColor: isDark ? "#3f3f3f" : "#FFF",
+            borderRadius: "8px",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexDirection: { xs: "column", md: "row" },
+            mt: 6,
+          }}
+        >
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              padding: 2,
+              gap: 1,
+            }}
+          >
+            <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+              NGINX - Projet d'école
+              <IconButton
+                sx={{ width: 32, height: 32, mb: 0.2, ml: 1 }}
+                onClick={() =>
+                  window.open(
+                    "https://github.com/Raphalinho91/nginx-docker",
+                    "_blank"
+                  )
+                }
+              >
+                <OpenInNewIcon sx={{ width: 20, height: 20 }} />
+              </IconButton>
+            </Typography>
+            <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
+              <strong>Compétences développées :</strong>
+              <ul>
+                <li>
+                  Maîtrise de l'installation et de l'initialisation de NGINX
+                  avec Docker.
+                </li>
+                <li>
+                  Configuration avancée de NGINX pour des applications web.
+                </li>
+                <li>
+                  Gestion de la sécurité avec SSL et HTTPS pour les sites web.
+                </li>
+                <li>Optimisation des performances via la mise en cache.</li>
+                <li>
+                  Mise en œuvre de solutions de gestion des cookies et des
+                  sessions.
+                </li>
+                <li>
+                  Application de sécurités avancées pour les pages et les URLs,
+                  ainsi que des limitations de requêtes.
+                </li>
+                <li>
+                  Création et gestion de sous-domaines pour des projets
+                  diversifiés.
+                </li>
+              </ul>
+            </Typography>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            width: "80%",
+            display: "flex",
+            backgroundColor: isDark ? "#3f3f3f" : "#FFF",
             borderRadius: "8px",
             justifyContent: "space-between",
             alignItems: "center",
@@ -588,16 +743,38 @@ const Projects = () => {
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
               GLPI - Projet d'école
             </Typography>
-            <Typography variant="body2">
-              GLPI (Gestion Libre de Parc Informatique) est un outil open source
-              de gestion des services informatiques, permettant le suivi des
-              ressources, la gestion d'inventaire, et le support technique.
-              Utilisé pour le Helpdesk et la gestion d’incidents, GLPI propose
-              une interface intuitive et des fonctionnalités avancées comme la
-              gestion de tickets, le suivi des équipements et des interventions,
-              et la génération de rapports. Grâce à ses options de
-              personnalisation et son extensibilité via des plugins, GLPI est un
-              outil incontournable pour optimiser la gestion des services IT.
+            <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
+              <strong>Compétences développées :</strong>
+              <ul>
+                <li>
+                  Installation et configuration de GLPI pour la gestion des
+                  actifs informatiques.
+                </li>
+                <li>
+                  Mise en place d'un système de tickets pour le suivi des
+                  demandes et incidents.
+                </li>
+                <li>
+                  Gestion des ressources matérielles et logicielles pour un
+                  suivi précis.
+                </li>
+                <li>
+                  Configuration des notifications et alertes pour une réactivité
+                  améliorée.
+                </li>
+                <li>
+                  Élaboration de rapports d'analyse pour optimiser la gestion du
+                  parc informatique.
+                </li>
+                <li>
+                  Utilisation des fonctionnalités d'inventaire automatique pour
+                  une mise à jour en temps réel.
+                </li>
+                <li>
+                  Formation des utilisateurs sur les bonnes pratiques et
+                  l'utilisation de GLPI.
+                </li>
+              </ul>
             </Typography>
           </Box>
         </Box>
@@ -605,7 +782,7 @@ const Projects = () => {
           sx={{
             width: "80%",
             display: "flex",
-            backgroundColor: isDark ? "#3f3f3f" : "#F2F2F2",
+            backgroundColor: isDark ? "#3f3f3f" : "#FFF",
             borderRadius: "8px",
             justifyContent: "space-between",
             alignItems: "center",
@@ -625,17 +802,38 @@ const Projects = () => {
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
               Pfsense ldaps - Projet d'école
             </Typography>
-            <Typography variant="body2">
-              Pfsense est un pare-feu open source robuste et flexible, utilisé
-              pour sécuriser les réseaux et gérer le trafic. Il offre une
-              interface web intuitive pour configurer des fonctionnalités
-              avancées de sécurité, comme le routage, le VPN, et les règles de
-              pare-feu. Intégré avec LDAP, pfSense peut s’appuyer sur des
-              annuaires d’entreprise pour l'authentification centralisée des
-              utilisateurs, facilitant ainsi la gestion des accès et la sécurité
-              réseau dans des environnements complexes. Sa polyvalence et ses
-              capacités de personnalisation en font un choix privilégié pour les
-              administrateurs réseaux.
+            <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
+              <strong>Compétences développées :</strong>
+              <ul>
+                <li>
+                  Installation et configuration de pfSense pour une gestion
+                  réseau sécurisée.
+                </li>
+                <li>
+                  Intégration de LDAPS pour sécuriser les communications entre
+                  les clients et le serveur LDAP.
+                </li>
+                <li>
+                  Configuration des règles de pare-feu pour contrôler le trafic
+                  réseau.
+                </li>
+                <li>
+                  Mise en place de VPN pour sécuriser l'accès distant aux
+                  ressources réseau.
+                </li>
+                <li>
+                  Surveillance et dépannage des connexions et des performances
+                  du réseau.
+                </li>
+                <li>
+                  Élaboration de politiques de sécurité pour protéger
+                  l'environnement réseau.
+                </li>
+                <li>
+                  Documentation des configurations et des meilleures pratiques
+                  pour une gestion future.
+                </li>
+              </ul>
             </Typography>
           </Box>
         </Box>
@@ -643,7 +841,7 @@ const Projects = () => {
           sx={{
             width: "80%",
             display: "flex",
-            backgroundColor: isDark ? "#3f3f3f" : "#F2F2F2",
+            backgroundColor: isDark ? "#3f3f3f" : "#FFF",
             borderRadius: "8px",
             justifyContent: "space-between",
             alignItems: "center",
@@ -661,18 +859,41 @@ const Projects = () => {
             }}
           >
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-              VLAN, Routage Inter Vlan - Projet d'école
+              Cisco Packet Tracer : VLAN, Routage Inter-VLAN, VTP, HSRP,
+              OSPF-RIP, Filtrage ACL - Projet d'école
             </Typography>
-            <Typography variant="body2">
-              Les VLANs (Virtual Local Area Networks) sont des réseaux virtuels
-              créés pour segmenter un réseau physique en plusieurs sous-réseaux
-              isolés. Cette segmentation améliore la sécurité et l’efficacité du
-              réseau en séparant les flux de données, permettant ainsi de
-              regrouper les dispositifs selon des départements, services, ou
-              fonctions spécifiques sans nécessiter d’infrastructure physique
-              séparée. Cette configuration est souvent réalisée à l’aide de
-              Cisco Packet Tracer, qui permet de simuler et de visualiser le
-              fonctionnement des VLANs dans un environnement virtuel.
+            <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
+              <strong>Compétences développées :</strong>
+              <ul>
+                <li>
+                  Création et gestion de VLAN pour segmenter le réseau et
+                  améliorer la sécurité.
+                </li>
+                <li>
+                  Configuration du routage inter-VLAN pour permettre la
+                  communication entre les différents segments.
+                </li>
+                <li>
+                  Utilisation de VTP (VLAN Trunking Protocol) pour simplifier la
+                  gestion des VLAN sur le réseau.
+                </li>
+                <li>
+                  Mise en place d'HSRP (Hot Standby Router Protocol) pour
+                  assurer la redondance des routeurs.
+                </li>
+                <li>
+                  Configuration des protocoles de routage OSPF et RIP pour
+                  l'optimisation des chemins de données.
+                </li>
+                <li>
+                  Application de filtrages ACL (Access Control Lists) pour
+                  renforcer la sécurité réseau.
+                </li>
+                <li>
+                  Simulation de scénarios de réseau complexe pour tester la
+                  performance et la fiabilité des configurations.
+                </li>
+              </ul>
             </Typography>
           </Box>
         </Box>

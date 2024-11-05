@@ -44,7 +44,7 @@ const About = () => {
           width: "100%",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: isDark ? "#282828" : "#F9F9F9",
+          backgroundColor: isDark ? "#282828" : "#F1F1F1",
           padding: "60px 0",
           flexDirection: { xs: "column", md: "row" },
         }}
@@ -221,7 +221,7 @@ const About = () => {
           width: "100%",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: isDark ? "#282828" : "#F9F9F9",
+          backgroundColor: isDark ? "#282828" : "#F1F1F1",
           padding: "40px 0",
           flexDirection: { xs: "column", md: "row" },
         }}

@@ -40,6 +40,7 @@ const getPreferredTheme = () => {
 
 const Navigation = () => {
   const { mode, setMode } = useColorScheme();
+  const isDark = mode === "dark";
   const [defaultMode, setDefaultMode] = useState<"dark" | "light" | null>(
     getPreferredTheme()
   );
@@ -79,9 +80,9 @@ const Navigation = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        width: "90%",
-        padding: "20px 0",
-        mt: 2,
+        width: "100%",
+        padding: "40px 50px 20px 50px",
+        backgroundColor: isDark ? "#282828" : "#F1F1F1",
       }}
     >
       <Box

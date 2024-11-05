@@ -63,11 +63,11 @@ const Footer = () => {
               justifyContent: "center",
               alignItems: "center",
               backgroundColor: "rgb(76, 86, 106)",
-              color: "rgb(216, 222, 233)",
+              color: "#F1F1F1",
               clipPath:
                 "polygon(50% 0px, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%)",
               "&:hover": {
-                backgroundColor: "rgb(216, 222, 233)",
+                backgroundColor: "#F1F1F1",
                 color: "rgb(76, 86, 106)",
                 transition: "clip-path .3s,background-color .3s",
               },
@@ -90,11 +90,11 @@ const Footer = () => {
               justifyContent: "center",
               alignItems: "center",
               backgroundColor: "rgb(76, 86, 106)",
-              color: "rgb(216, 222, 233)",
+              color: "#F1F1F1",
               clipPath:
                 "polygon(50% 0px, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%)",
               "&:hover": {
-                backgroundColor: "rgb(216, 222, 233)",
+                backgroundColor: "#F1F1F1",
                 color: "rgb(76, 86, 106)",
                 transition: "clip-path .3s,background-color .3s",
               },
@@ -113,7 +113,7 @@ const Footer = () => {
           alignItems: "center",
           padding: "20px 0px",
           flexDirection: { xs: "column", md: "row" },
-          backgroundColor: isDark ? "#282828" : "#F9F9F9",
+          backgroundColor: isDark ? "#282828" : "#F1F1F1",
         }}
       >
         <Box
