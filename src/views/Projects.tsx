@@ -2,6 +2,7 @@ import {
   Box,
   Divider,
   IconButton,
+  Skeleton,
   Typography,
   useColorScheme,
 } from "@mui/material";
@@ -10,6 +11,7 @@ import Acenstream from "../assets/acenstream.jpeg";
 import Koabuy from "../assets/Koabuy.png";
 import Patterns from "../assets/patterns-in-your-life.webp";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import { useState } from "react";
 
 const acenstream = [
   "ReactJs",
@@ -50,6 +52,8 @@ const patternsInYourLife = [
 const Projects = () => {
   const { mode } = useColorScheme();
   const isDark = mode === "dark";
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   return (
     <>
       <Divider />
@@ -190,18 +194,28 @@ const Projects = () => {
               alignItems: "center",
             }}
           >
+            {!isImageLoaded && (
+              <Skeleton
+                variant="rectangular"
+                width="100%"
+                height="100%"
+                sx={{ borderRadius: "8px" }}
+              />
+            )}
             <Box
               component="img"
               alt="Acenstream"
               src={Acenstream}
               sx={{
                 width: "100%",
-                height: "auto",
+                height: "100%",
                 maxWidth: "100%",
                 objectFit: "cover",
                 borderRadius: "8px",
+                display: isImageLoaded ? "block" : "none",
               }}
               loading="lazy"
+              onLoad={() => setIsImageLoaded(true)}
             />
           </Box>
         </Box>
@@ -227,18 +241,28 @@ const Projects = () => {
               alignItems: "center",
             }}
           >
+            {!isImageLoaded && (
+              <Skeleton
+                variant="rectangular"
+                width="100%"
+                height="100%"
+                sx={{ borderRadius: "8px" }}
+              />
+            )}
             <Box
               component="img"
               alt="Koabuy"
               src={Koabuy}
               sx={{
                 width: "100%",
-                height: "auto",
+                height: "100%",
                 maxWidth: "100%",
                 objectFit: "cover",
                 borderRadius: "8px",
+                display: isImageLoaded ? "block" : "none",
               }}
               loading="lazy"
+              onLoad={() => setIsImageLoaded(true)}
             />
           </Box>
           <Box
@@ -381,18 +405,28 @@ const Projects = () => {
               alignItems: "center",
             }}
           >
+            {!isImageLoaded && (
+              <Skeleton
+                variant="rectangular"
+                width="100%"
+                height="100%"
+                sx={{ borderRadius: "8px" }}
+              />
+            )}
             <Box
               component="img"
               alt="Patterns"
               src={Patterns}
               sx={{
                 width: "100%",
-                height: "auto",
+                height: "100%",
                 maxWidth: "100%",
                 objectFit: "cover",
                 borderRadius: "8px",
+                display: isImageLoaded ? "block" : "none",
               }}
               loading="lazy"
+              onLoad={() => setIsImageLoaded(true)}
             />
           </Box>
         </Box>
@@ -444,8 +478,10 @@ const Projects = () => {
               Configuration de machines AD DS, DNS, DHCP - Projet d'école
             </Typography>
             <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
-              <strong>Compétences développées :</strong>
-              <ul>
+              <strong style={{ color: isDark ? "#FFF" : "#000" }}>
+                Compétences développées :
+              </strong>
+              <ul style={{ color: isDark ? "#FFF" : "#000" }}>
                 <li>
                   Installation et configuration d'Active Directory Domain
                   Services (AD DS) pour la gestion des utilisateurs et des
@@ -505,8 +541,10 @@ const Projects = () => {
               machines Nagios XI. - Projet d'école
             </Typography>
             <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
-              <strong>Compétences développées :</strong>
-              <ul>
+              <strong style={{ color: isDark ? "#FFF" : "#000" }}>
+                Compétences développées :
+              </strong>
+              <ul style={{ color: isDark ? "#FFF" : "#000" }}>
                 <li>
                   Installation et configuration de Nagios XI pour la supervision
                   des infrastructures.
@@ -564,8 +602,10 @@ const Projects = () => {
               LAMP OCS - Projet d'école
             </Typography>
             <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
-              <strong>Compétences développées :</strong>
-              <ul>
+              <strong style={{ color: isDark ? "#FFF" : "#000" }}>
+                Compétences développées :
+              </strong>
+              <ul style={{ color: isDark ? "#FFF" : "#000" }}>
                 <li>
                   Installation et configuration de l'environnement LAMP (Linux,
                   Apache, MySQL, PHP).
@@ -621,8 +661,10 @@ const Projects = () => {
               Apache - Projet d'école
             </Typography>
             <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
-              <strong>Compétences développées :</strong>
-              <ul>
+              <strong style={{ color: isDark ? "#FFF" : "#000" }}>
+                Compétences développées :
+              </strong>
+              <ul style={{ color: isDark ? "#FFF" : "#000" }}>
                 <li>
                   Installation et configuration d'Apache pour des serveurs web.
                 </li>
@@ -690,8 +732,10 @@ const Projects = () => {
               </IconButton>
             </Typography>
             <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
-              <strong>Compétences développées :</strong>
-              <ul>
+              <strong style={{ color: isDark ? "#FFF" : "#000" }}>
+                Compétences développées :
+              </strong>
+              <ul style={{ color: isDark ? "#FFF" : "#000" }}>
                 <li>
                   Maîtrise de l'installation et de l'initialisation de NGINX
                   avec Docker.
@@ -744,8 +788,10 @@ const Projects = () => {
               GLPI - Projet d'école
             </Typography>
             <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
-              <strong>Compétences développées :</strong>
-              <ul>
+              <strong style={{ color: isDark ? "#FFF" : "#000" }}>
+                Compétences développées :
+              </strong>
+              <ul style={{ color: isDark ? "#FFF" : "#000" }}>
                 <li>
                   Installation et configuration de GLPI pour la gestion des
                   actifs informatiques.
@@ -803,8 +849,10 @@ const Projects = () => {
               Pfsense ldaps - Projet d'école
             </Typography>
             <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
-              <strong>Compétences développées :</strong>
-              <ul>
+              <strong style={{ color: isDark ? "#FFF" : "#000" }}>
+                Compétences développées :
+              </strong>
+              <ul style={{ color: isDark ? "#FFF" : "#000" }}>
                 <li>
                   Installation et configuration de pfSense pour une gestion
                   réseau sécurisée.
@@ -863,8 +911,10 @@ const Projects = () => {
               OSPF-RIP, Filtrage ACL - Projet d'école
             </Typography>
             <Typography variant="body2" sx={{ color: "#555", lineHeight: 1.5 }}>
-              <strong>Compétences développées :</strong>
-              <ul>
+              <strong style={{ color: isDark ? "#FFF" : "#000" }}>
+                Compétences développées :
+              </strong>
+              <ul style={{ color: isDark ? "#FFF" : "#000" }}>
                 <li>
                   Création et gestion de VLAN pour segmenter le réseau et
                   améliorer la sécurité.

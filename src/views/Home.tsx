@@ -2,17 +2,22 @@ import {
   Box,
   Button,
   Divider,
+  Skeleton,
+  Slide,
   Typography,
   useColorScheme,
 } from "@mui/material";
 import Me from "../assets/raphael_de_almeida.webp";
 import { useTranslation } from "react-i18next";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
+import { useState } from "react";
 
 const Home = () => {
   const { mode } = useColorScheme();
   const isDark = mode === "dark";
   const { t } = useTranslation();
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   return (
     <>
       <Divider />
@@ -65,19 +70,31 @@ const Home = () => {
             alignItems: "center",
           }}
         >
-          <Box
-            component="img"
-            alt="Raphaël De Almeida"
-            src={Me}
-            sx={{
-              width: { xs: "300px", sm: "300px", md: "300px" },
-              height: "auto",
-              maxWidth: "100%",
-              objectFit: "cover",
-              borderRadius: "8px",
-            }}
-            loading="lazy"
-          />
+          {!isImageLoaded && (
+            <Skeleton
+              variant="rectangular"
+              width={300}
+              height={400}
+              sx={{ borderRadius: "8px" }}
+            />
+          )}
+          <Slide in={isImageLoaded} direction="right" timeout={500}>
+            <Box
+              component="img"
+              alt="Raphaël De Almeida"
+              src={Me}
+              sx={{
+                width: "300px",
+                height: "auto",
+                maxWidth: "100%",
+                objectFit: "cover",
+                borderRadius: "8px",
+                display: isImageLoaded ? "block" : "none",
+              }}
+              loading="lazy"
+              onLoad={() => setIsImageLoaded(true)}
+            />
+          </Slide>
         </Box>
         <Box
           sx={{
@@ -90,55 +107,99 @@ const Home = () => {
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          <Typography
-            sx={{
-              "& span": { fontWeight: "bold" },
-              width: { xs: "70%", md: "80%" },
-              mb: 3,
-            }}
-            variant="h6"
-          >
-            {t("iAm")} <span>Raphaël</span> {t("iAmDev")}
-          </Typography>
-          <Typography
-            sx={{
-              "& span": { fontWeight: "bold" },
-              width: { xs: "70%", md: "80%" },
-              mb: 3,
-            }}
-            variant="h6"
-          >
-            {t("craftSite")}
-            <span>conception</span>
-            {t("andOf")}
-            <span>design</span>
-            {t("of")}
-            <span>{t("development")}</span>
-            {t("andOf2")}
-            <span>{t("deployment")}</span>.
-          </Typography>
-          <Typography
-            sx={{
-              "& span": { fontWeight: "bold" },
-              width: { xs: "70%", md: "80%" },
-              mb: 3,
-            }}
-            variant="h6"
-          >
-            {t("workNow")}
-            <span>Acensi</span>.
-          </Typography>
-          <Button
-            startIcon={<FileDownloadIcon />}
-            variant="contained"
-            sx={{
-              backgroundColor: "rgb(76, 86, 106)",
-              color: "#F1F1F1",
-              textTransform: "initial",
-            }}
-          >
-            Mon CV
-          </Button>
+          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+            {!isImageLoaded && (
+              <Skeleton variant="text" width="100%" height={40} />
+            )}
+            <Slide in={isImageLoaded} direction="left" timeout={500}>
+              <Typography
+                sx={{
+                  "& span": { fontWeight: "bold" },
+                }}
+                variant="h6"
+              >
+                {t("iAm")} <span>Raphaël</span> {t("iAmDev")}
+              </Typography>
+            </Slide>
+          </Box>
+          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+            {!isImageLoaded && (
+              <Skeleton variant="text" width="100%" height={40} />
+            )}
+            <Slide in={isImageLoaded} direction="left" timeout={500}>
+              <Typography
+                sx={{
+                  "& span": { fontWeight: "bold" },
+                }}
+                variant="h6"
+              >
+                {t("craftSite")}
+                <span>conception</span>
+                {t("andOf")}
+                <span>design</span>
+                {t("of")}
+                <span>{t("development")}</span>
+                {t("andOf2")}
+                <span>{t("deployment")}</span>.
+              </Typography>
+            </Slide>
+          </Box>
+          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+            {!isImageLoaded && (
+              <Skeleton variant="text" width="100%" height={40} />
+            )}
+            <Slide in={isImageLoaded} direction="left" timeout={500}>
+              <Typography
+                sx={{
+                  "& span": { fontWeight: "bold" },
+                }}
+                variant="h6"
+              >
+                {t("craftSite")}
+                <span>conception</span>
+                {t("andOf")}
+                <span>design</span>
+                {t("of")}
+                <span>{t("development")}</span>
+                {t("andOf2")}
+                <span>{t("deployment")}</span>.
+              </Typography>
+            </Slide>
+          </Box>
+          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+            {!isImageLoaded && (
+              <Skeleton variant="text" width="100%" height={40} />
+            )}
+            <Slide in={isImageLoaded} direction="left" timeout={500}>
+              <Typography
+                sx={{
+                  "& span": { fontWeight: "bold" },
+                }}
+                variant="h6"
+              >
+                {t("workNow")}
+                <span>Acensi</span>.
+              </Typography>
+            </Slide>
+          </Box>
+          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+            {!isImageLoaded && (
+              <Skeleton variant="rectangular" width={120} height={40} />
+            )}
+            <Slide in={isImageLoaded} direction="left" timeout={500}>
+              <Button
+                startIcon={<FileDownloadIcon />}
+                variant="contained"
+                sx={{
+                  backgroundColor: "rgb(76, 86, 106)",
+                  color: "#F1F1F1",
+                  textTransform: "initial",
+                }}
+              >
+                Mon CV
+              </Button>
+            </Slide>
+          </Box>
         </Box>
       </Box>
     </>

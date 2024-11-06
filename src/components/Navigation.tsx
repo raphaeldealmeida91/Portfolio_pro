@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Divider,
   Drawer,
   IconButton,
@@ -74,6 +75,11 @@ const Navigation = () => {
     return null;
   }
 
+  const handleNavDrawer = (nav: string) => {
+    setOpenMenu(false);
+    navigate(nav);
+  };
+
   return (
     <Box
       sx={{
@@ -81,7 +87,7 @@ const Navigation = () => {
         justifyContent: "space-between",
         alignItems: "center",
         width: "100%",
-        padding: "40px 50px 20px 50px",
+        padding: { xs: "40px 10px 20px 10px", sm: "40px 50px 20px 50px" },
         backgroundColor: isDark ? "#282828" : "#F1F1F1",
       }}
     >
@@ -90,13 +96,14 @@ const Navigation = () => {
           display: "flex",
         }}
       >
-        <Typography
-          sx={{ fontWeight: "bold", cursor: "pointer" }}
+        <Button
           onClick={() => navigate(views[0].nav)}
-          variant="h6"
+          sx={{ textTransform: "initial", color: isDark ? "#FFF" : "#000" }}
         >
-          Raphaël De Almeida
-        </Typography>
+          <Typography sx={{ fontWeight: "bold" }} variant="h6">
+            Raphaël De Almeida
+          </Typography>
+        </Button>
       </Box>
       <Box
         sx={{
@@ -106,18 +113,25 @@ const Navigation = () => {
         }}
       >
         {views.map(({ text, nav }, index) => (
-          <Typography
+          <Button
             key={index}
-            variant="body1"
             onClick={() => navigate(nav)}
             sx={{
-              display: { xs: "none", md: "flex" },
-              fontWeight: "bold",
-              cursor: "pointer",
+              textTransform: "initial",
+              color: isDark ? "#FFF" : "#000",
+              display: { xs: "none", lg: "flex" },
             }}
           >
-            {t(text)}
-          </Typography>
+            <Typography
+              variant="body1"
+              onClick={() => navigate(nav)}
+              sx={{
+                fontWeight: "bold",
+              }}
+            >
+              {t(text)}
+            </Typography>
+          </Button>
         ))}
 
         {mode === "light" ? (
@@ -139,7 +153,7 @@ const Navigation = () => {
           <LanguageIcon />
         </IconButton>
         <IconButton
-          sx={{ display: { xs: "flex", md: "none" } }}
+          sx={{ display: { xs: "flex", lg: "none" } }}
           onClick={
             openMenu ? () => setOpenMenu(false) : () => setOpenMenu(true)
           }
@@ -150,21 +164,36 @@ const Navigation = () => {
           anchor="right"
           open={openMenu}
           onClose={() => setOpenMenu(false)}
-          sx={{ display: { xs: "flex", md: "none" } }}
+          sx={{ display: { xs: "flex", lg: "none" } }}
         >
           <Box sx={{ width: 250 }}>
             <List>
-              <Typography
-                sx={{ fontWeight: "bold", textAlign: "center", mt: 2, mb: 2 }}
-                onClick={() => navigate(views[0].nav)}
-                variant="h6"
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "100%",
+                }}
               >
-                Raphaël De Almeida
-              </Typography>
+                <Button
+                  onClick={() => handleNavDrawer(views[0].nav)}
+                  sx={{
+                    textTransform: "initial",
+                    color: isDark ? "#FFF" : "#000",
+                    mt: 2,
+                    mb: 2,
+                  }}
+                >
+                  <Typography sx={{ fontWeight: "bold" }} variant="h6">
+                    Raphaël De Almeida
+                  </Typography>
+                </Button>
+              </Box>
               <Divider />
               {views.map(({ text, icon, nav }, index) => (
                 <ListItem key={index} disablePadding>
-                  <ListItemButton onClick={() => navigate(nav)}>
+                  <ListItemButton onClick={() => handleNavDrawer(nav)}>
                     <ListItemIcon>{icon}</ListItemIcon>
                     <Typography sx={{ fontWeight: "bold" }} variant="body1">
                       {t(text)}

@@ -73,14 +73,14 @@ const Experience = () => {
             display: "flex",
             alignItems: "flex-start",
             justifyContent: "flex-start",
-            width: "80%",
+            width: { xs: "100%", lg: "80%" },
             flexDirection: "column",
           }}
         >
           <Timeline
             sx={{
               [`& .${timelineOppositeContentClasses.root}`]: {
-                flex: 0.2,
+                flex: { xs: 0.1, sm: 0.3 },
               },
             }}
             position="right"

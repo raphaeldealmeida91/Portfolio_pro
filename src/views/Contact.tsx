@@ -7,6 +7,7 @@ import {
   useColorScheme,
   Snackbar,
   Alert,
+  CircularProgress,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import emailjs from "@emailjs/browser";
@@ -23,6 +24,7 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [object, setObject] = useState("");
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSendMessage = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -32,6 +34,7 @@ const Contact = () => {
       setSnackbarOpen(true);
       return;
     }
+    setIsLoading(true);
 
     const templateParams = {
       from_email: email,
@@ -47,19 +50,18 @@ const Contact = () => {
         "kmt4PQq7aSKfolanD"
       )
       .then(
-        (response) => {
+        () => {
           setSnackbarMessage("Message envoyé avec succès !");
           setSnackbarSeverity("success");
-          console.log({ response });
         },
-        (error) => {
+        () => {
           setSnackbarMessage("Une erreur s'est produite. Veuillez réessayer.");
           setSnackbarSeverity("error");
-          console.log({ error });
         }
       )
       .finally(() => {
         setSnackbarOpen(true);
+        setIsLoading(false);
         setEmail("");
         setObject("");
         setMessage("");
@@ -161,7 +163,16 @@ const Contact = () => {
             sx={{ display: "flex", justifyContent: "flex-end", width: "100%" }}
           >
             <Button
-              startIcon={<SendIcon />}
+              startIcon={
+                isLoading ? (
+                  <CircularProgress
+                    size={20}
+                    sx={{ color: "rgb(216, 222, 233)" }}
+                  />
+                ) : (
+                  <SendIcon sx={{ color: "rgb(216, 222, 233)" }} />
+                )
+              }
               variant="contained"
               type="submit"
               sx={{
@@ -169,8 +180,9 @@ const Contact = () => {
                 color: "rgb(216, 222, 233)",
                 textTransform: "initial",
               }}
+              disabled={isLoading}
             >
-              Envoyez
+              {isLoading ? "Envoi..." : "Envoyez"}
             </Button>
           </Box>
         </Box>
