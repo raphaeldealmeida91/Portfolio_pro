@@ -5,6 +5,7 @@ import {
   BoxRowParentSkills,
   BoxSkills,
 } from "../styles/styles";
+import { useTranslation } from "react-i18next";
 
 const frontEnd = ["ReactJs", "ViteJs", "NextJs", "Native", "Electron"];
 const backEnd = ["NodeJs", "Express", "Fastify"];
@@ -16,18 +17,21 @@ const api = ["REST API", "WebSockets", "Google API", "Azure API", "OpenAi API"];
 const toolsCode = [
   "Visual Studio Code",
   "Android Studio",
-  "Ubuntu",
+  "IntelliJ IDEA",
   "Mac",
-  "Linux",
+  "Ubuntu",
+  "Raspberry os",
 ];
 const toolsEquip = ["Jira", "Github", "Trello"];
-const devOps = ["Docker", "Apache", "Nginx"];
+const devOps = ["Docker", "Apache", "Nginx", "Prometheus", "Grafana"];
 const machineVirtuel = ["Debian", "Ubuntu", "Kali", "Windows Server"];
 const toolsReseau = ["VMware", "Virtual Box", "UTM"];
 
 const Skills = () => {
   const { mode } = useColorScheme();
   const isDark = mode === "dark";
+  const { t } = useTranslation();
+
   return (
     <>
       <Divider />
@@ -57,7 +61,7 @@ const Skills = () => {
             }}
             variant="h5"
           >
-            Compétences
+            {t("skills")}
           </Typography>
         </Box>
       </Box>
@@ -81,7 +85,8 @@ const Skills = () => {
           }}
           variant="h6"
         >
-          Compétences ou outils dans le <span>développement</span>
+          {t("skillsPage")}&emsp;
+          <span>{t("dev")}</span>
         </Typography>
         <Box sx={BoxRowParentSkills}>
           <Box sx={BoxCenter}>
@@ -184,7 +189,7 @@ const Skills = () => {
           </Box>
           <Box sx={BoxCenter}>
             <Typography sx={{ fontWeight: "bold", mb: 1 }} variant="h6">
-              Base de donnée
+              {t("database")}
             </Typography>
             <Box sx={BoxParentSkills}>
               {database.map((text, index) => (
@@ -208,7 +213,7 @@ const Skills = () => {
           </Box>
           <Box sx={BoxCenter}>
             <Typography variant="h6" fontWeight="bold" gutterBottom>
-              API ou Micro-services
+              API {t("or")} Micro-services
             </Typography>
             <Box sx={BoxParentSkills}>
               {api.map((text, index) => (
@@ -258,7 +263,7 @@ const Skills = () => {
           </Box>
           <Box sx={BoxCenter}>
             <Typography sx={{ fontWeight: "bold", mb: 1 }} variant="h6">
-              IDE & environnement de developpement
+              {t("toolsEnv")}
             </Typography>
             <Box sx={BoxParentSkills}>
               {toolsCode.map((text, index) => (
@@ -282,7 +287,7 @@ const Skills = () => {
           </Box>
           <Box sx={BoxCenter}>
             <Typography variant="h6" fontWeight="bold" gutterBottom>
-              Outils pour le travail en équipe
+              {t("tools")}
             </Typography>
             <Box sx={BoxParentSkills}>
               {toolsEquip.map((text, index) => (
@@ -315,7 +320,8 @@ const Skills = () => {
           }}
           variant="h6"
         >
-          Compétences ou outils dans le <span>réseau</span>
+          {t("skillsPage")}&emsp;
+          <span>{t("network")}</span>
         </Typography>
         <Box sx={BoxRowParentSkills}>
           <Box sx={BoxCenter}>
@@ -344,7 +350,7 @@ const Skills = () => {
           </Box>
           <Box sx={BoxCenter}>
             <Typography sx={{ fontWeight: "bold", mb: 1 }} variant="h6">
-              Machine virtuel
+              {t("toolsVirtual")}
             </Typography>
             <Box sx={BoxParentSkills}>
               {machineVirtuel.map((text, index) => (
@@ -368,7 +374,7 @@ const Skills = () => {
           </Box>
           <Box sx={BoxCenter}>
             <Typography variant="h6" fontWeight="bold" gutterBottom>
-              Logiciel de virtualisation
+              {t("toolsLogiciel")}
             </Typography>
             <Box sx={BoxParentSkills}>
               {toolsReseau.map((text, index) => (

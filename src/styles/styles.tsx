@@ -20,7 +20,7 @@ export const BoxParentSkills = {
   display: "flex",
   flexWrap: "wrap",
   gap: 1,
-  width: 300,
+  width: { xs: 300, md: 340 },
   justifyContent: "center",
 };
 

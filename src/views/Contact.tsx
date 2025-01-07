@@ -11,10 +11,12 @@ import {
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import emailjs from "@emailjs/browser";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const { mode } = useColorScheme();
   const isDark = mode === "dark";
+  const { t } = useTranslation();
   const form = useRef<HTMLFormElement | null>(null);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
@@ -100,7 +102,7 @@ const Contact = () => {
             }}
             variant="h5"
           >
-            Envoyez-moi un mail !
+            {t("sendEmail")}
           </Typography>
         </Box>
       </Box>
@@ -182,7 +184,7 @@ const Contact = () => {
               }}
               disabled={isLoading}
             >
-              {isLoading ? "Envoi..." : "Envoyez"}
+              {isLoading ? t("sending") : t("send")}
             </Button>
           </Box>
         </Box>

@@ -47,7 +47,7 @@ const Home = () => {
             }}
             variant="h5"
           >
-            Bonjour !
+            {t("goodMorning")}
           </Typography>
         </Box>
       </Box>
@@ -107,7 +107,9 @@ const Home = () => {
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+          <Box
+            sx={{ width: { xs: "70%", md: "80%" }, mb: isImageLoaded ? 3 : 0 }}
+          >
             {!isImageLoaded && (
               <Skeleton variant="text" width="100%" height={40} />
             )}
@@ -122,7 +124,9 @@ const Home = () => {
               </Typography>
             </Slide>
           </Box>
-          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+          <Box
+            sx={{ width: { xs: "70%", md: "80%" }, mb: isImageLoaded ? 3 : 0 }}
+          >
             {!isImageLoaded && (
               <Skeleton variant="text" width="100%" height={40} />
             )}
@@ -144,7 +148,9 @@ const Home = () => {
               </Typography>
             </Slide>
           </Box>
-          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+          <Box
+            sx={{ width: { xs: "70%", md: "80%" }, mb: isImageLoaded ? 3 : 0 }}
+          >
             {!isImageLoaded && (
               <Skeleton variant="text" width="100%" height={40} />
             )}
@@ -166,7 +172,9 @@ const Home = () => {
               </Typography>
             </Slide>
           </Box>
-          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+          <Box
+            sx={{ width: { xs: "70%", md: "80%" }, mb: isImageLoaded ? 3 : 0 }}
+          >
             {!isImageLoaded && (
               <Skeleton variant="text" width="100%" height={40} />
             )}
@@ -182,7 +190,9 @@ const Home = () => {
               </Typography>
             </Slide>
           </Box>
-          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+          <Box
+            sx={{ width: { xs: "70%", md: "80%" }, mb: isImageLoaded ? 3 : 0 }}
+          >
             {!isImageLoaded && (
               <Skeleton variant="rectangular" width={120} height={40} />
             )}
@@ -196,7 +206,7 @@ const Home = () => {
                   textTransform: "initial",
                 }}
               >
-                Mon CV
+                {t("cv")}
               </Button>
             </Slide>
           </Box>

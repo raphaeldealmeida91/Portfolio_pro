@@ -8,11 +8,13 @@ import {
 import VSC from "../assets/vsc.png";
 import Boxe from "../assets/boxe.jpeg";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
   const { mode } = useColorScheme();
   const isDark = mode === "dark";
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -43,7 +45,7 @@ const About = () => {
             }}
             variant="h5"
           >
-            A propos de moi !
+            {t("aboutMe")}
           </Typography>
         </Box>
       </Box>
@@ -70,36 +72,29 @@ const About = () => {
         >
           <Typography
             sx={{
-              "& span": { fontWeight: "bold" },
               width: { xs: "70%", md: "80%" },
               mb: 2,
             }}
             variant="body1"
           >
-            Je crée des sites web et des applications depuis maintenant{" "}
-            <span>2 ans</span>.
+            {t("likeWeb")}
           </Typography>
           <Typography
             sx={{
-              "& span": { fontWeight: "bold" },
               width: { xs: "70%", md: "80%" },
               mb: 2,
             }}
             variant="body1"
           >
-            Je suis <span>passionné</span> passionné et <span>créatif</span>. Je
-            me soucie de l'accessibilité, de la <span>qualité</span> et des
-            performmances.
+            {t("likePassion")}
           </Typography>
           <Typography
             sx={{
-              "& span": { fontWeight: "bold" },
               width: { xs: "70%", md: "80%" },
             }}
             variant="body1"
           >
-            J'aime les technologies backend et frontend, et j'aime la logique et
-            les interfaces étonnantes.
+            {t("likeTech")}
           </Typography>
         </Box>
         <Box
@@ -191,56 +186,47 @@ const About = () => {
         >
           <Typography
             sx={{
-              "& span": { fontWeight: "bold" },
               width: { xs: "70%", md: "80%" },
               mb: 2,
             }}
             variant="body1"
           >
-            Je vis près de Paris 🇫🇷.
+            {t("liveParis")}
           </Typography>
           <Typography
             sx={{
-              "& span": { fontWeight: "bold" },
               width: { xs: "70%", md: "80%" },
               mb: 2,
             }}
             variant="body1"
           >
-            J'aime créer, découvrir et apprendre de nouvelles choses. J'aime la
-            musique, les films, les séries et les mangas.
+            {t("likeCreated")}
           </Typography>
           <Typography
             sx={{
-              "& span": { fontWeight: "bold" },
               width: { xs: "70%", md: "80%" },
               mb: 2,
             }}
             variant="body1"
           >
-            La boxe, la musculation ou le sport en général m'aident à me sentir
-            bien, mais j'aime aussi jouer aux jeux vidéos ou lire des livres.
+            {t("likeBoxed")}
           </Typography>
           <Typography
             sx={{
-              "& span": { fontWeight: "bold" },
               width: { xs: "70%", md: "80%" },
               mb: 2,
             }}
             variant="body1"
           >
-            J'aime aussi les voyages, découvir de nouvelles cultures, goûter de
-            nouveaux plats et m'aventurer dans de nouveaux lieux.
+            {t("likeTravel")}
           </Typography>
           <Typography
             sx={{
-              "& span": { fontWeight: "bold" },
               width: { xs: "70%", md: "80%" },
             }}
             variant="body1"
           >
-            Le code est aussi un aspect important dans ma vie aujourd'hui.
-            J'aime me lancer des défis et réaliser ce que j'imagine.
+            {t("likeCode")}
           </Typography>
         </Box>
       </Box>
@@ -271,8 +257,7 @@ const About = () => {
             }}
             variant="h6"
           >
-            Maintenant que vous me connaissez, je serais ravi de faire votre
-            connaissance !
+            {t("likeYou")}
           </Typography>
         </Box>
       </Box>
