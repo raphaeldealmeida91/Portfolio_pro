@@ -11,12 +11,17 @@ import Me from "../assets/raphael_de_almeida.webp";
 import { useTranslation } from "react-i18next";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import { useState } from "react";
+import CVPDF from "../assets/RaphaelDeAlmeida.pdf";
 
 const Home = () => {
   const { mode } = useColorScheme();
   const isDark = mode === "dark";
   const { t } = useTranslation();
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  const handleOpenCV = () => {
+    window.open(CVPDF, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <>
@@ -200,6 +205,7 @@ const Home = () => {
               <Button
                 startIcon={<FileDownloadIcon />}
                 variant="contained"
+                onClick={handleOpenCV}
                 sx={{
                   backgroundColor: "rgb(76, 86, 106)",
                   color: "#F1F1F1",
