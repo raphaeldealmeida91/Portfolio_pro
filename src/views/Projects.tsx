@@ -2,16 +2,15 @@ import {
   Box,
   Divider,
   IconButton,
-  Skeleton,
   Typography,
   useColorScheme,
 } from "@mui/material";
 import { BoxParentSkills, BoxSkills } from "../styles/styles";
 import Acenstream from "../assets/acenstream.jpeg";
 import Koabuy from "../assets/Koabuy.png";
-import Patterns from "../assets/patterns-in-your-life.webp";
+import Patterns from "../assets/patterns-in-your-life.jpeg";
+import Society2production from "../assets/society2production.png";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import { useState } from "react";
 
 const acenstream = [
   "ReactJs",
@@ -49,10 +48,17 @@ const patternsInYourLife = [
   "Google Drive API",
 ];
 
+const society2production = [
+  "ViteJs",
+  "Material U.I",
+  "Framer-motion",
+  "CSS",
+  "EmailJS",
+];
+
 const Projects = () => {
   const { mode } = useColorScheme();
   const isDark = mode === "dark";
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   return (
     <>
@@ -127,7 +133,7 @@ const Projects = () => {
             backgroundColor: isDark ? "#3f3f3f" : "#FFF",
             borderRadius: "8px",
             justifyContent: "space-between",
-            alignItems: "center",
+            alignItems: "left",
             flexDirection: { xs: "column", md: "row" },
             mt: 6,
           }}
@@ -139,6 +145,8 @@ const Projects = () => {
               flexDirection: "column",
               padding: 2,
               gap: 1,
+              alignItems: "flex-start",
+              justifyContent: "flex-start",
             }}
           >
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
@@ -194,14 +202,6 @@ const Projects = () => {
               alignItems: "center",
             }}
           >
-            {!isImageLoaded && (
-              <Skeleton
-                variant="rectangular"
-                width="100%"
-                height="100%"
-                sx={{ borderRadius: "8px" }}
-              />
-            )}
             <Box
               component="img"
               alt="Acenstream"
@@ -212,10 +212,9 @@ const Projects = () => {
                 maxWidth: "100%",
                 objectFit: "cover",
                 borderRadius: "8px",
-                display: isImageLoaded ? "block" : "none",
+                display: "block",
               }}
               loading="lazy"
-              onLoad={() => setIsImageLoaded(true)}
             />
           </Box>
         </Box>
@@ -226,7 +225,7 @@ const Projects = () => {
             backgroundColor: isDark ? "#3f3f3f" : "#FFF",
             borderRadius: "8px",
             justifyContent: "space-between",
-            alignItems: "center",
+            alignItems: "left",
             flexDirection: { xs: "column", md: "row" },
             mt: 6,
           }}
@@ -237,18 +236,10 @@ const Projects = () => {
               display: "flex",
               flexDirection: "column",
               padding: 2,
-              justifyContent: "center",
-              alignItems: "center",
+              alignItems: "flex-start",
+              justifyContent: "flex-start",
             }}
           >
-            {!isImageLoaded && (
-              <Skeleton
-                variant="rectangular"
-                width="100%"
-                height="100%"
-                sx={{ borderRadius: "8px" }}
-              />
-            )}
             <Box
               component="img"
               alt="Koabuy"
@@ -259,10 +250,9 @@ const Projects = () => {
                 maxWidth: "100%",
                 objectFit: "cover",
                 borderRadius: "8px",
-                display: isImageLoaded ? "block" : "none",
+                display: "block",
               }}
               loading="lazy"
-              onLoad={() => setIsImageLoaded(true)}
             />
           </Box>
           <Box
@@ -331,7 +321,7 @@ const Projects = () => {
             backgroundColor: isDark ? "#3f3f3f" : "#FFF",
             borderRadius: "8px",
             justifyContent: "space-between",
-            alignItems: "center",
+            alignItems: "left",
             flexDirection: { xs: "column", md: "row" },
             mt: 6,
           }}
@@ -343,6 +333,8 @@ const Projects = () => {
               flexDirection: "column",
               padding: 2,
               gap: 1,
+              alignItems: "flex-start",
+              justifyContent: "flex-start",
             }}
           >
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
@@ -405,14 +397,6 @@ const Projects = () => {
               alignItems: "center",
             }}
           >
-            {!isImageLoaded && (
-              <Skeleton
-                variant="rectangular"
-                width="100%"
-                height="100%"
-                sx={{ borderRadius: "8px" }}
-              />
-            )}
             <Box
               component="img"
               alt="Patterns"
@@ -423,11 +407,107 @@ const Projects = () => {
                 maxWidth: "100%",
                 objectFit: "cover",
                 borderRadius: "8px",
-                display: isImageLoaded ? "block" : "none",
+                display: "block",
               }}
               loading="lazy"
-              onLoad={() => setIsImageLoaded(true)}
             />
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            width: "80%",
+            display: "flex",
+            backgroundColor: isDark ? "#3f3f3f" : "#FFF",
+            borderRadius: "8px",
+            justifyContent: "space-between",
+            alignItems: "left",
+            flexDirection: { xs: "column", md: "row" },
+            mt: 6,
+            minHeight: "300px",
+          }}
+        >
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              padding: 2,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Box
+              component="img"
+              alt="Society2production"
+              src={Society2production}
+              sx={{
+                width: "100%",
+                height: "100%",
+                maxWidth: "100%",
+                objectFit: "cover",
+                borderRadius: "8px",
+                display: "block",
+              }}
+              loading="lazy"
+            />
+          </Box>
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              justifyContent: "flex-start",
+              padding: 2,
+              gap: 1,
+            }}
+          >
+            <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+              Society2production - Projet personnel
+              <IconButton
+                sx={{ width: 32, height: 32, mb: 0.2, ml: 1 }}
+                onClick={() =>
+                  window.open(
+                    "https://society2production.onrender.com/",
+                    "_blank"
+                  )
+                }
+              >
+                <OpenInNewIcon sx={{ width: 20, height: 20 }} />
+              </IconButton>
+            </Typography>
+            <Typography variant="h6">2025</Typography>
+            <Typography variant="body2">
+              Society2production est un site permettant de réserver un shooting
+              photo ( une séance photo ) et de montrer les talents et les photos
+              que Society2production a pu produire.
+            </Typography>
+            <Box
+              sx={{
+                ...BoxParentSkills,
+                width: "100%",
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+              }}
+            >
+              {society2production.map((text, index) => (
+                <Box
+                  key={index}
+                  sx={{
+                    ...BoxSkills,
+                    backgroundColor: isDark ? "#575757" : "#F5F5F5",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      color: isDark ? "#FFF" : "#000",
+                    }}
+                  >
+                    {text}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
           </Box>
         </Box>
         <Typography
@@ -472,6 +552,8 @@ const Projects = () => {
               flexDirection: "column",
               padding: 2,
               gap: 1,
+              alignItems: "flex-start",
+              justifyContent: "flex-start",
             }}
           >
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
@@ -534,6 +616,8 @@ const Projects = () => {
               flexDirection: "column",
               padding: 2,
               gap: 1,
+              alignItems: "flex-start",
+              justifyContent: "flex-start",
             }}
           >
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
@@ -596,6 +680,8 @@ const Projects = () => {
               flexDirection: "column",
               padding: 2,
               gap: 1,
+              alignItems: "flex-start",
+              justifyContent: "flex-start",
             }}
           >
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>

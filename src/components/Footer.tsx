@@ -17,6 +17,7 @@ const Footer = () => {
           alignItems: "center",
           padding: "50px 0",
           flexDirection: { xs: "column", md: "row" },
+          overflowX: "hidden",
         }}
       >
         <Box

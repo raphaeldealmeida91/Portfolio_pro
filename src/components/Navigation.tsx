@@ -89,6 +89,7 @@ const Navigation = () => {
         width: "100%",
         padding: { xs: "40px 10px 20px 10px", sm: "40px 50px 20px 50px" },
         backgroundColor: isDark ? "#282828" : "#F1F1F1",
+        overflowX: "hidden",
       }}
     >
       <Box

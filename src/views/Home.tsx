@@ -2,22 +2,19 @@ import {
   Box,
   Button,
   Divider,
-  Skeleton,
   Slide,
   Typography,
   useColorScheme,
 } from "@mui/material";
-import Me from "../assets/raphael_de_almeida.webp";
+import Me from "../assets/raphael_de_almeida.jpeg";
 import { useTranslation } from "react-i18next";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
-import { useState } from "react";
 import CVPDF from "../assets/RaphaelDeAlmeida.pdf";
 
 const Home = () => {
   const { mode } = useColorScheme();
   const isDark = mode === "dark";
   const { t } = useTranslation();
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const handleOpenCV = () => {
     window.open(CVPDF, "_blank", "noopener,noreferrer");
@@ -34,6 +31,7 @@ const Home = () => {
           alignItems: "center",
           padding: "30px 0",
           flexDirection: { xs: "column", md: "row" },
+          overflowX: "hidden",
         }}
       >
         <Box
@@ -75,15 +73,7 @@ const Home = () => {
             alignItems: "center",
           }}
         >
-          {!isImageLoaded && (
-            <Skeleton
-              variant="rectangular"
-              width={300}
-              height={400}
-              sx={{ borderRadius: "8px" }}
-            />
-          )}
-          <Slide in={isImageLoaded} direction="right" timeout={500}>
+          <Slide in={true} direction="right" timeout={500}>
             <Box
               component="img"
               alt="Raphaël De Almeida"
@@ -94,10 +84,9 @@ const Home = () => {
                 maxWidth: "100%",
                 objectFit: "cover",
                 borderRadius: "8px",
-                display: isImageLoaded ? "block" : "none",
+                display: "block",
               }}
               loading="lazy"
-              onLoad={() => setIsImageLoaded(true)}
             />
           </Slide>
         </Box>
@@ -112,13 +101,8 @@ const Home = () => {
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          <Box
-            sx={{ width: { xs: "70%", md: "80%" }, mb: isImageLoaded ? 3 : 0 }}
-          >
-            {!isImageLoaded && (
-              <Skeleton variant="text" width="100%" height={40} />
-            )}
-            <Slide in={isImageLoaded} direction="left" timeout={500}>
+          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+            <Slide in={true} direction="left" timeout={500}>
               <Typography
                 sx={{
                   "& span": { fontWeight: "bold" },
@@ -129,13 +113,8 @@ const Home = () => {
               </Typography>
             </Slide>
           </Box>
-          <Box
-            sx={{ width: { xs: "70%", md: "80%" }, mb: isImageLoaded ? 3 : 0 }}
-          >
-            {!isImageLoaded && (
-              <Skeleton variant="text" width="100%" height={40} />
-            )}
-            <Slide in={isImageLoaded} direction="left" timeout={500}>
+          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+            <Slide in={true} direction="left" timeout={500}>
               <Typography
                 sx={{
                   "& span": { fontWeight: "bold" },
@@ -153,13 +132,8 @@ const Home = () => {
               </Typography>
             </Slide>
           </Box>
-          <Box
-            sx={{ width: { xs: "70%", md: "80%" }, mb: isImageLoaded ? 3 : 0 }}
-          >
-            {!isImageLoaded && (
-              <Skeleton variant="text" width="100%" height={40} />
-            )}
-            <Slide in={isImageLoaded} direction="left" timeout={500}>
+          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+            <Slide in={true} direction="left" timeout={500}>
               <Typography
                 sx={{
                   "& span": { fontWeight: "bold" },
@@ -177,13 +151,8 @@ const Home = () => {
               </Typography>
             </Slide>
           </Box>
-          <Box
-            sx={{ width: { xs: "70%", md: "80%" }, mb: isImageLoaded ? 3 : 0 }}
-          >
-            {!isImageLoaded && (
-              <Skeleton variant="text" width="100%" height={40} />
-            )}
-            <Slide in={isImageLoaded} direction="left" timeout={500}>
+          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+            <Slide in={true} direction="left" timeout={500}>
               <Typography
                 sx={{
                   "& span": { fontWeight: "bold" },
@@ -195,13 +164,8 @@ const Home = () => {
               </Typography>
             </Slide>
           </Box>
-          <Box
-            sx={{ width: { xs: "70%", md: "80%" }, mb: isImageLoaded ? 3 : 0 }}
-          >
-            {!isImageLoaded && (
-              <Skeleton variant="rectangular" width={120} height={40} />
-            )}
-            <Slide in={isImageLoaded} direction="left" timeout={500}>
+          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+            <Slide in={true} direction="left" timeout={500}>
               <Button
                 startIcon={<FileDownloadIcon />}
                 variant="contained"

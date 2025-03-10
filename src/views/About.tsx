@@ -1,19 +1,11 @@
-import {
-  Box,
-  Divider,
-  Skeleton,
-  Typography,
-  useColorScheme,
-} from "@mui/material";
+import { Box, Divider, Typography, useColorScheme } from "@mui/material";
 import VSC from "../assets/vsc.png";
 import Boxe from "../assets/boxe.jpeg";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const About = () => {
   const { mode } = useColorScheme();
   const isDark = mode === "dark";
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const { t } = useTranslation();
 
   return (
@@ -106,14 +98,6 @@ const About = () => {
             mt: { xs: 4, md: 0 },
           }}
         >
-          {!isImageLoaded && (
-            <Skeleton
-              variant="rectangular"
-              width={300}
-              height={150}
-              sx={{ borderRadius: "8px" }}
-            />
-          )}
           <Box
             component="img"
             alt="Visual studio code"
@@ -124,10 +108,9 @@ const About = () => {
               maxWidth: "100%",
               objectFit: "cover",
               borderRadius: "8px",
-              display: isImageLoaded ? "block" : "none",
+              display: "block",
             }}
             loading="lazy"
-            onLoad={() => setIsImageLoaded(true)}
           />
         </Box>
       </Box>
@@ -149,14 +132,6 @@ const About = () => {
             alignItems: "center",
           }}
         >
-          {!isImageLoaded && (
-            <Skeleton
-              variant="rectangular"
-              width={300}
-              height={450}
-              sx={{ borderRadius: "8px" }}
-            />
-          )}
           <Box
             component="img"
             alt="Boxe"
@@ -167,10 +142,9 @@ const About = () => {
               maxWidth: "100%",
               objectFit: "cover",
               borderRadius: "8px",
-              display: isImageLoaded ? "block" : "none",
+              display: "block",
             }}
             loading="lazy"
-            onLoad={() => setIsImageLoaded(true)}
           />
         </Box>
         <Box
