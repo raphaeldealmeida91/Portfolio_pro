@@ -104,7 +104,7 @@ const About = () => {
             src={VSC}
             sx={{
               width: "300px",
-              height: "auto",
+              height: "150px",
               maxWidth: "100%",
               objectFit: "cover",
               borderRadius: "8px",
@@ -138,7 +138,7 @@ const About = () => {
             src={Boxe}
             sx={{
               width: "300px",
-              height: "auto",
+              height: "450px",
               maxWidth: "100%",
               objectFit: "cover",
               borderRadius: "8px",

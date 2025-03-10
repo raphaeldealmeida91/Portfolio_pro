@@ -80,7 +80,7 @@ const Home = () => {
               src={Me}
               sx={{
                 width: "300px",
-                height: "auto",
+                height: "400px",
                 maxWidth: "100%",
                 objectFit: "cover",
                 borderRadius: "8px",
@@ -167,6 +167,7 @@ const Home = () => {
           <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
             <Slide in={true} direction="left" timeout={500}>
               <Button
+                id="btn-download-cv"
                 startIcon={<FileDownloadIcon />}
                 variant="contained"
                 onClick={handleOpenCV}

@@ -267,6 +267,7 @@ const Projects = () => {
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
               Koabuy - Projet personnel
               <IconButton
+                id="btn-koabuy"
                 sx={{ width: 32, height: 32, mb: 0.2, ml: 1 }}
                 onClick={() =>
                   window.open("https://koabuy.onrender.com", "_blank")
@@ -340,6 +341,7 @@ const Projects = () => {
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
               Patterns in your life - Projet personnel
               <IconButton
+                id="patterns-mode"
                 sx={{ width: 32, height: 32, mb: 0.2, ml: 1 }}
                 onClick={() =>
                   window.open("https://koabuy.onrender.com", "_blank")
@@ -465,6 +467,7 @@ const Projects = () => {
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
               Society2production - Projet personnel
               <IconButton
+                id="btn-society2production"
                 sx={{ width: 32, height: 32, mb: 0.2, ml: 1 }}
                 onClick={() =>
                   window.open(
@@ -806,6 +809,7 @@ const Projects = () => {
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
               NGINX - Projet d'école
               <IconButton
+                id="btn-nginx"
                 sx={{ width: 32, height: 32, mb: 0.2, ml: 1 }}
                 onClick={() =>
                   window.open(

@@ -98,6 +98,7 @@ const Navigation = () => {
         }}
       >
         <Button
+          id="btn-title"
           onClick={() => navigate(views[0].nav)}
           sx={{ textTransform: "initial", color: isDark ? "#FFF" : "#000" }}
         >
@@ -115,6 +116,7 @@ const Navigation = () => {
       >
         {views.map(({ text, nav }, index) => (
           <Button
+            id={`btn-nav-${index}`}
             key={index}
             onClick={() => navigate(nav)}
             sx={{
@@ -136,15 +138,16 @@ const Navigation = () => {
         ))}
 
         {mode === "light" ? (
-          <IconButton onClick={() => setMode("dark")}>
+          <IconButton onClick={() => setMode("dark")} id="dark-mode">
             <DarkModeIcon />
           </IconButton>
         ) : (
-          <IconButton onClick={() => setMode("light")}>
+          <IconButton onClick={() => setMode("light")} id="light-mode">
             <LightModeIcon />
           </IconButton>
         )}
         <IconButton
+          id="btn-language"
           onClick={
             i18n.language === "fr"
               ? () => changeLanguage("en")
@@ -154,6 +157,7 @@ const Navigation = () => {
           <LanguageIcon />
         </IconButton>
         <IconButton
+          id="btn-menu"
           sx={{ display: { xs: "flex", lg: "none" } }}
           onClick={
             openMenu ? () => setOpenMenu(false) : () => setOpenMenu(true)
@@ -178,6 +182,7 @@ const Navigation = () => {
                 }}
               >
                 <Button
+                  id="btn-title-mobile"
                   onClick={() => handleNavDrawer(views[0].nav)}
                   sx={{
                     textTransform: "initial",
@@ -194,7 +199,10 @@ const Navigation = () => {
               <Divider />
               {views.map(({ text, icon, nav }, index) => (
                 <ListItem key={index} disablePadding>
-                  <ListItemButton onClick={() => handleNavDrawer(nav)}>
+                  <ListItemButton
+                    id={`btn-nav-mobile-${index}`}
+                    onClick={() => handleNavDrawer(nav)}
+                  >
                     <ListItemIcon>{icon}</ListItemIcon>
                     <Typography sx={{ fontWeight: "bold" }} variant="body1">
                       {t(text)}
