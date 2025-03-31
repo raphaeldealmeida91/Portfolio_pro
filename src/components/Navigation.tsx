@@ -87,7 +87,7 @@ const Navigation = () => {
         justifyContent: "space-between",
         alignItems: "center",
         width: "100%",
-        padding: { xs: "40px 10px 20px 10px", sm: "40px 50px 20px 50px" },
+        padding: { xs: "20px 10px 20px 10px", sm: "20px 50px 20px 50px" },
         backgroundColor: isDark ? "#282828" : "#F1F1F1",
         overflowX: "hidden",
       }}
