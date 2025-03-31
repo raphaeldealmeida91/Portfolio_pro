@@ -142,8 +142,8 @@ const Contact = () => {
           <TextField
             id="object"
             name="object"
-            placeholder="Object"
-            label="Object"
+            placeholder={t("object")}
+            label={t("object")}
             required
             fullWidth
             value={object}

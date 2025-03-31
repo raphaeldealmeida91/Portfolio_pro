@@ -24,7 +24,7 @@ export const BoxParentSkills = {
   justifyContent: "center",
 };
 
-export const BoxSkills = {
+export const BoxChildrenSkills = {
   backgroundColor: "#F2F2F2",
   display: "flex",
   justifyContent: "center",

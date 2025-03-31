@@ -10,14 +10,15 @@ import Me from "../assets/raphael_de_almeida.jpeg";
 import { useTranslation } from "react-i18next";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import CVPDF from "../assets/RaphaelDeAlmeida.pdf";
+import TableauSynthesePDF from "../assets/TableauDeSynthese(E5).pdf";
 
 const Home = () => {
   const { mode } = useColorScheme();
   const isDark = mode === "dark";
   const { t } = useTranslation();
 
-  const handleOpenCV = () => {
-    window.open(CVPDF, "_blank", "noopener,noreferrer");
+  const handleOpenCV = (file: string) => {
+    window.open(file, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -170,7 +171,7 @@ const Home = () => {
                 id="btn-download-cv"
                 startIcon={<FileDownloadIcon />}
                 variant="contained"
-                onClick={handleOpenCV}
+                onClick={() => handleOpenCV(CVPDF)}
                 sx={{
                   backgroundColor: "rgb(76, 86, 106)",
                   color: "#F1F1F1",
@@ -178,6 +179,22 @@ const Home = () => {
                 }}
               >
                 {t("cv")}
+              </Button>
+            </Slide>
+            <Slide in={true} direction="left" timeout={500}>
+              <Button
+                id="btn-download-tableSynthese"
+                startIcon={<FileDownloadIcon />}
+                variant="contained"
+                onClick={() => handleOpenCV(TableauSynthesePDF)}
+                sx={{
+                  backgroundColor: "rgb(76, 86, 106)",
+                  color: "#F1F1F1",
+                  textTransform: "initial",
+                  ml: 2,
+                }}
+              >
+                {t("tableSynthese")}
               </Button>
             </Slide>
           </Box>

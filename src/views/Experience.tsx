@@ -9,13 +9,24 @@ import {
 import TimelineOppositeContent, {
   timelineOppositeContentClasses,
 } from "@mui/lab/TimelineOppositeContent";
+import { motion } from "framer-motion";
 import { Box, Divider, Typography, useColorScheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import {
+  AcensiJob,
+  HightSchool,
+  StageBresil,
+  SupSchool,
+} from "../data/DataExperience";
 
 const Experience = () => {
   const { mode } = useColorScheme();
   const isDark = mode === "dark";
   const { t } = useTranslation();
+  const timelineItemVariants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  };
 
   return (
     <>
@@ -88,157 +99,48 @@ const Experience = () => {
             }}
             position="right"
           >
-            <TimelineItem className="timeline-item0">
-              <TimelineOppositeContent>
-                <Typography color="textSecondary">2023 - 2025</Typography>
-              </TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineDot
-                  sx={{ backgroundColor: isDark ? "#3f3f3f" : "#FFF" }}
-                />
-                <TimelineConnector
-                  sx={{ backgroundColor: isDark ? "#3f3f3f" : "#FFF" }}
-                />
-              </TimelineSeparator>
-              <TimelineContent
-                sx={{
-                  backgroundColor: isDark ? "#3f3f3f" : "#FFF",
-                  margin: 1,
-                  borderRadius: "10px",
-                }}
-              >
-                <Typography variant="h6" component="span" fontWeight="bold">
-                  Acensi - Développeur Web Full-Stack
-                </Typography>
-                <Typography>
-                  Mon rôle de Développeur Web chez Acensi couvre tout le cycle
-                  de développement logiciel en full stack. Mes missions incluent
-                  :<br />- Détection et résolution de bugs
-                  <br />- Tests front-end et back-end avec Cypress et Jest
-                  <br />- Ajout de nouvelles fonctionnalités et amélioration des
-                  existantes
-                  <br />- Refacto de code et ajout d'une nouvelle achitecture
-                  dans le Front & le Back
-                  <br />
-                  Technologies utilisées :
-                  <br />- Front-end : ReactJs, Redux, MaterialUI
-                  <br />- Back-end : NodeJs, Fastify, PostgreSQL, Sequelize,
-                  Socket.io
-                  <br />
-                  Outils et méthode :
-                  <br />- Suivi des bugs et gestion des tâches avec Jira
-                  (méthode Agile)
-                  <br />- CI/CD avec Jenkins pour automatiser les tests et
-                  garantir la qualité du code
-                  <br />
-                  Grâce à ces outils et pratiques, je développe des applications
-                  web robustes et performantes, en veillant à répondre aux
-                  besoins des utilisateurs et aux objectifs du projet.
-                </Typography>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem className="timeline-item1">
-              <TimelineOppositeContent>
-                <Typography color="textSecondary">2023 - 2025</Typography>
-              </TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineDot
-                  sx={{ backgroundColor: isDark ? "#3f3f3f" : "#FFF" }}
-                />
-                <TimelineConnector
-                  sx={{ backgroundColor: isDark ? "#3f3f3f" : "#FFF" }}
-                />
-              </TimelineSeparator>
-              <TimelineContent
-                sx={{
-                  backgroundColor: isDark ? "#3f3f3f" : "#FFF",
-                  margin: 1,
-                  borderRadius: "10px",
-                }}
-              >
-                <Typography variant="h6" component="span" fontWeight="bold">
-                  Efrei - BTS SIO
-                </Typography>
-                <Typography>
-                  J'ai intégré la Grande École d'Ingénieurs Généraliste et
-                  Expert du Numérique à Paris, Efrei. J'y est effectué un BTS
-                  SIO (Services Informatiques aux Organisations), avec comme
-                  spécialité SISR (Solutions d'Infrastructure, Systèmes et
-                  Réseaux). J'ai pu travailler et améliorer mes compétences en
-                  développement dans mon entreprise comme j'étais en alternance
-                  chez Acensi. Ce BTS m'a permis d'acquérir des compétences dans
-                  le réseau et le développement.
-                </Typography>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem className="timeline-item2">
-              <TimelineOppositeContent>
-                <Typography color="textSecondary">avril - mai 2023</Typography>
-              </TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineDot
-                  sx={{ backgroundColor: isDark ? "#3f3f3f" : "#FFF" }}
-                />
-                <TimelineConnector
-                  sx={{ backgroundColor: isDark ? "#3f3f3f" : "#FFF" }}
-                />
-              </TimelineSeparator>
-              <TimelineContent
-                sx={{
-                  backgroundColor: isDark ? "#3f3f3f" : "#FFF",
-                  margin: 1,
-                  borderRadius: "10px",
-                }}
-              >
-                <Typography variant="h6" component="span" fontWeight="bold">
-                  Yllona - Développeur Front-End au Brésil
-                </Typography>
-                <Typography>
-                  J'ai effectué 3 semaines de stages chez Yllona. J'ai travaillé
-                  sur leur application Web Conexte qui met en relation des
-                  sociétés. Les librairies utilisés sont :<br />
-                  - ReactJs
-                  <br />
-                  - Material U.I <br />
-                  Mission réalisé :<br />
-                  - Création de Landing Page
-                  <br />- Création de la page Contact de l'application Web
-                </Typography>
-              </TimelineContent>
-            </TimelineItem>
-
-            <TimelineItem className="timeline-item3">
-              <TimelineOppositeContent>
-                <Typography color="textSecondary">2019 - 2023</Typography>
-              </TimelineOppositeContent>
-              <TimelineSeparator>
-                <TimelineDot
-                  sx={{ backgroundColor: isDark ? "#3f3f3f" : "#FFF" }}
-                />
-                <TimelineConnector
-                  sx={{ backgroundColor: isDark ? "#3f3f3f" : "#FFF" }}
-                />
-              </TimelineSeparator>
-              <TimelineContent
-                sx={{
-                  backgroundColor: isDark ? "#3f3f3f" : "#FFF",
-                  margin: 1,
-                  borderRadius: "10px",
-                }}
-              >
-                <Typography variant="h6" component="span" fontWeight="bold">
-                  Lycée Joseph Talma - Brunoy
-                </Typography>
-                <Typography>
-                  Baccalauréat général
-                  <br />- Mathématique
-                  <br />- Sciences Economiques et sociales
-                  <br />- Histoire Géographie, Géopolitique et Science Politique
-                </Typography>
-              </TimelineContent>
-            </TimelineItem>
+            {[AcensiJob, SupSchool, StageBresil, HightSchool].map(
+              (item, index) => (
+                <motion.div
+                  key={index}
+                  variants={timelineItemVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false }}
+                >
+                  <TimelineItem>
+                    <TimelineOppositeContent>
+                      <Typography color="textSecondary">{item.date}</Typography>
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                      <TimelineDot
+                        sx={{ backgroundColor: isDark ? "#3f3f3f" : "#FFF" }}
+                      />
+                      <TimelineConnector
+                        sx={{ backgroundColor: isDark ? "#3f3f3f" : "#FFF" }}
+                      />
+                    </TimelineSeparator>
+                    <TimelineContent
+                      sx={{
+                        backgroundColor: isDark ? "#3f3f3f" : "#FFF",
+                        margin: 1,
+                        borderRadius: "10px",
+                      }}
+                    >
+                      <Typography variant="h6" fontWeight="bold">
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        component="pre"
+                        sx={{ whiteSpace: "pre-wrap" }}
+                      >
+                        {item.content}
+                      </Typography>
+                    </TimelineContent>
+                  </TimelineItem>
+                </motion.div>
+              )
+            )}
           </Timeline>
         </Box>
       </Box>

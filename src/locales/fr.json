@@ -39,5 +39,7 @@
   "sendEmail": "Envoyez-moi un mail !",
   "send": "Envoyez",
   "sending": "Envoi...",
-  "studyWork": "Mes études et mon parcours professionnel"
+  "studyWork": "Mes études et mon parcours professionnel",
+  "object": "Objet",
+  "tableSynthese": "Tableau de synthèse"
 }

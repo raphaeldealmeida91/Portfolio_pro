@@ -169,9 +169,17 @@ const Navigation = () => {
           anchor="right"
           open={openMenu}
           onClose={() => setOpenMenu(false)}
-          sx={{ display: { xs: "flex", lg: "none" } }}
+          sx={{
+            display: { xs: "flex", lg: "none" },
+            "& .MuiDrawer-paper": {
+              backdropFilter: "blur(5px)",
+              backgroundColor: isDark
+                ? "rgba(0, 0, 0, 0.4)"
+                : "rgba(255, 255, 255, 0.8)",
+            },
+          }}
         >
-          <Box sx={{ width: 250 }}>
+          <Box sx={{ width: 250, height: "100%" }}>
             <List>
               <Box
                 sx={{

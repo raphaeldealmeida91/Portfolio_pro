@@ -1,4 +1,4 @@
-import { Box, Divider, Typography, useColorScheme } from "@mui/material";
+import { Box, Divider, Slide, Typography, useColorScheme } from "@mui/material";
 import VSC from "../assets/vsc.png";
 import Boxe from "../assets/boxe.jpeg";
 import { useTranslation } from "react-i18next";
@@ -62,32 +62,38 @@ const About = () => {
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          <Typography
-            sx={{
-              width: { xs: "70%", md: "80%" },
-              mb: 2,
-            }}
-            variant="body1"
-          >
-            {t("likeWeb")}
-          </Typography>
-          <Typography
-            sx={{
-              width: { xs: "70%", md: "80%" },
-              mb: 2,
-            }}
-            variant="body1"
-          >
-            {t("likePassion")}
-          </Typography>
-          <Typography
-            sx={{
-              width: { xs: "70%", md: "80%" },
-            }}
-            variant="body1"
-          >
-            {t("likeTech")}
-          </Typography>
+          <Slide in={true} direction="right" timeout={500}>
+            <Typography
+              sx={{
+                width: { xs: "70%", md: "80%" },
+                mb: 2,
+              }}
+              variant="body1"
+            >
+              {t("likeWeb")}
+            </Typography>
+          </Slide>
+          <Slide in={true} direction="right" timeout={500}>
+            <Typography
+              sx={{
+                width: { xs: "70%", md: "80%" },
+                mb: 2,
+              }}
+              variant="body1"
+            >
+              {t("likePassion")}
+            </Typography>
+          </Slide>
+          <Slide in={true} direction="right" timeout={500}>
+            <Typography
+              sx={{
+                width: { xs: "70%", md: "80%" },
+              }}
+              variant="body1"
+            >
+              {t("likeTech")}
+            </Typography>
+          </Slide>
         </Box>
         <Box
           sx={{
@@ -98,20 +104,22 @@ const About = () => {
             mt: { xs: 4, md: 0 },
           }}
         >
-          <Box
-            component="img"
-            alt="Visual studio code"
-            src={VSC}
-            sx={{
-              width: "300px",
-              height: "150px",
-              maxWidth: "100%",
-              objectFit: "cover",
-              borderRadius: "8px",
-              display: "block",
-            }}
-            loading="lazy"
-          />
+          <Slide in={true} direction="left" timeout={500}>
+            <Box
+              component="img"
+              alt="Visual studio code"
+              src={VSC}
+              sx={{
+                width: "300px",
+                height: "150px",
+                maxWidth: "100%",
+                objectFit: "cover",
+                borderRadius: "8px",
+                display: "block",
+              }}
+              loading="lazy"
+            />
+          </Slide>
         </Box>
       </Box>
       <Box
@@ -132,20 +140,22 @@ const About = () => {
             alignItems: "center",
           }}
         >
-          <Box
-            component="img"
-            alt="Boxe"
-            src={Boxe}
-            sx={{
-              width: "300px",
-              height: "450px",
-              maxWidth: "100%",
-              objectFit: "cover",
-              borderRadius: "8px",
-              display: "block",
-            }}
-            loading="lazy"
-          />
+          <Slide in={true} direction="right" timeout={500}>
+            <Box
+              component="img"
+              alt="Boxe"
+              src={Boxe}
+              sx={{
+                width: "300px",
+                height: "450px",
+                maxWidth: "100%",
+                objectFit: "cover",
+                borderRadius: "8px",
+                display: "block",
+              }}
+              loading="lazy"
+            />
+          </Slide>
         </Box>
         <Box
           sx={{
@@ -158,50 +168,60 @@ const About = () => {
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          <Typography
-            sx={{
-              width: { xs: "70%", md: "80%" },
-              mb: 2,
-            }}
-            variant="body1"
-          >
-            {t("liveParis")}
-          </Typography>
-          <Typography
-            sx={{
-              width: { xs: "70%", md: "80%" },
-              mb: 2,
-            }}
-            variant="body1"
-          >
-            {t("likeCreated")}
-          </Typography>
-          <Typography
-            sx={{
-              width: { xs: "70%", md: "80%" },
-              mb: 2,
-            }}
-            variant="body1"
-          >
-            {t("likeBoxed")}
-          </Typography>
-          <Typography
-            sx={{
-              width: { xs: "70%", md: "80%" },
-              mb: 2,
-            }}
-            variant="body1"
-          >
-            {t("likeTravel")}
-          </Typography>
-          <Typography
-            sx={{
-              width: { xs: "70%", md: "80%" },
-            }}
-            variant="body1"
-          >
-            {t("likeCode")}
-          </Typography>
+          <Slide in={true} direction="left" timeout={500}>
+            <Typography
+              sx={{
+                width: { xs: "70%", md: "80%" },
+                mb: 2,
+              }}
+              variant="body1"
+            >
+              {t("liveParis")}
+            </Typography>
+          </Slide>
+          <Slide in={true} direction="left" timeout={500}>
+            <Typography
+              sx={{
+                width: { xs: "70%", md: "80%" },
+                mb: 2,
+              }}
+              variant="body1"
+            >
+              {t("likeCreated")}
+            </Typography>
+          </Slide>
+          <Slide in={true} direction="left" timeout={500}>
+            <Typography
+              sx={{
+                width: { xs: "70%", md: "80%" },
+                mb: 2,
+              }}
+              variant="body1"
+            >
+              {t("likeBoxed")}
+            </Typography>
+          </Slide>
+          <Slide in={true} direction="left" timeout={500}>
+            <Typography
+              sx={{
+                width: { xs: "70%", md: "80%" },
+                mb: 2,
+              }}
+              variant="body1"
+            >
+              {t("likeTravel")}
+            </Typography>
+          </Slide>
+          <Slide in={true} direction="left" timeout={500}>
+            <Typography
+              sx={{
+                width: { xs: "70%", md: "80%" },
+              }}
+              variant="body1"
+            >
+              {t("likeCode")}
+            </Typography>
+          </Slide>
         </Box>
       </Box>
       <Box
