@@ -9,15 +9,15 @@ import {
 import Me from "../assets/raphael_de_almeida.jpeg";
 import { useTranslation } from "react-i18next";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
-import CVPDF from "../assets/RaphaelDeAlmeida.pdf";
-import TableauSynthesePDF from "../assets/TableauDeSynthese(E5).pdf";
+import CVPDF from "/RaphaelDeAlmeida.pdf";
+import TableauSynthesePDF from "/TableauDeSynthese(E5).pdf";
 
 const Home = () => {
   const { mode } = useColorScheme();
   const isDark = mode === "dark";
   const { t } = useTranslation();
 
-  const handleOpenCV = (file: string) => {
+  const handleOpenFile = (file: string) => {
     window.open(file, "_blank", "noopener,noreferrer");
   };
 
@@ -171,7 +171,7 @@ const Home = () => {
                 id="btn-download-cv"
                 startIcon={<FileDownloadIcon />}
                 variant="contained"
-                onClick={() => handleOpenCV(CVPDF)}
+                onClick={() => handleOpenFile(CVPDF)}
                 sx={{
                   backgroundColor: "rgb(76, 86, 106)",
                   color: "#F1F1F1",
@@ -186,7 +186,7 @@ const Home = () => {
                 id="btn-download-tableSynthese"
                 startIcon={<FileDownloadIcon />}
                 variant="contained"
-                onClick={() => handleOpenCV(TableauSynthesePDF)}
+                onClick={() => handleOpenFile(TableauSynthesePDF)}
                 sx={{
                   backgroundColor: "rgb(76, 86, 106)",
                   color: "#F1F1F1",

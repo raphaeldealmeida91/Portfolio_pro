@@ -16,10 +16,12 @@ import {
   Society2ProductionPro,
 } from "../data/DataProjectDev";
 import { BoxProjectLeft } from "../components/Box/BoxProjectLeft";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
   const { mode } = useColorScheme();
   const isDark = mode === "dark";
+  const { t } = useTranslation();
 
   return (
     <>
@@ -50,7 +52,7 @@ const Projects = () => {
             }}
             variant="h5"
           >
-            Projets
+            {t("project")}
           </Typography>
         </Box>
       </Box>

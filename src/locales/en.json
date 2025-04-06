@@ -41,5 +41,11 @@
     "sending": "Sending...",
     "studyWork": "My education and career",
     "object": "Object",
-    "tableSynthese": "Summary table"
+    "tableSynthese": "Summary table",
+    "epreuveE6": "Exam E6 / Projects for the BTS",
+    "examE6": "Exam E6",
+    "project1": "Project 1 - Jury documentation",
+    "project1Doc": "Project 1 - Technical documentation",
+    "project2": "Project 1 - Jury documentation",
+    "project2Doc": "Project 2 - Technical documentation"
   }

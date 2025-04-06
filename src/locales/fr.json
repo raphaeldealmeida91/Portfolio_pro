@@ -41,5 +41,11 @@
   "sending": "Envoi...",
   "studyWork": "Mes études et mon parcours professionnel",
   "object": "Objet",
-  "tableSynthese": "Tableau de synthèse"
+  "tableSynthese": "Tableau de synthèse",
+  "epreuveE6": "Epreuve E6 / Projets pour le BTS",
+  "examE6": "Epreuve E6",
+  "project1": "Projet 1 - Documentation jury",
+  "project1Doc": "Projet 1 - Documentation technique",
+  "project2": "Projet 2 - Documentation jury",
+  "project2Doc": "Projet 2 - Documentation technique"
 }

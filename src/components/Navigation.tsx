@@ -20,6 +20,7 @@ import { useEffect, useState } from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import SchoolIcon from "@mui/icons-material/School";
 import WorkIcon from "@mui/icons-material/Work";
 import WalletIcon from "@mui/icons-material/Wallet";
 import { useNavigate } from "react-router-dom";
@@ -30,6 +31,7 @@ const views = [
   { text: "about", icon: <PersonIcon />, nav: "/about" },
   { text: "skills", icon: <WalletIcon />, nav: "/skills" },
   { text: "project", icon: <AccountTreeIcon />, nav: "/projects" },
+  { text: "examE6", icon: <SchoolIcon />, nav: "/epreuve-e6" },
   { text: "experience", icon: <WorkIcon />, nav: "/experience" },
   { text: "Contact", icon: <EmailIcon />, nav: "/contact" },
 ];
