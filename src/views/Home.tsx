@@ -165,7 +165,16 @@ const Home = () => {
               </Typography>
             </Slide>
           </Box>
-          <Box sx={{ width: { xs: "70%", md: "80%" }, mb: 3 }}>
+          <Box
+            sx={{
+              display: "flex",
+              width: { xs: "70%", md: "80%" },
+              mb: 3,
+              justifyContent: { xs: "center", md: "flex-start" },
+              flexDirection: { xs: "column", md: "row" },
+              gap: { xs: 4, md: 2 },
+            }}
+          >
             <Slide in={true} direction="left" timeout={500}>
               <Button
                 id="btn-download-cv"
@@ -173,6 +182,7 @@ const Home = () => {
                 variant="contained"
                 onClick={() => handleOpenFile(CVPDF)}
                 sx={{
+                  display: "flex",
                   backgroundColor: "rgb(76, 86, 106)",
                   color: "#F1F1F1",
                   textTransform: "initial",
@@ -188,10 +198,10 @@ const Home = () => {
                 variant="contained"
                 onClick={() => handleOpenFile(TableauSynthesePDF)}
                 sx={{
+                  display: "flex",
                   backgroundColor: "rgb(76, 86, 106)",
                   color: "#F1F1F1",
                   textTransform: "initial",
-                  ml: 2,
                 }}
               >
                 {t("tableSynthese")}

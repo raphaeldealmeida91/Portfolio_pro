@@ -5,10 +5,11 @@ import { Box } from "@mui/material";
 import Footer from "./components/Footer";
 import About from "./views/About";
 import Skills from "./views/Skills";
-import Projects from "./views/Projects";
 import Experience from "./views/Experience";
 import Contact from "./views/Contact";
 import EpreuveE6 from "./views/EpreuveE6";
+import ProjectsDevelopment from "./views/ProjectsDevelopment";
+import ProjectsNetwork from "./views/ProjectsNetwork";
 
 function App() {
   return (
@@ -27,10 +28,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/development" element={<ProjectsDevelopment />} />
+        <Route path="/projects/network" element={<ProjectsNetwork />} />
         <Route path="/epreuve-e6" element={<EpreuveE6 />} />
         <Route path="/experience" element={<Experience />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Home />} />
       </Routes>
       <Box
         sx={{

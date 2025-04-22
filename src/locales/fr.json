@@ -47,5 +47,7 @@
   "project1": "Projet 1 - Documentation jury",
   "project1Doc": "Projet 1 - Documentation technique",
   "project2": "Projet 2 - Documentation jury",
-  "project2Doc": "Projet 2 - Documentation technique"
+  "project2Doc": "Projet 2 - Documentation technique",
+  "projectDev": "Développement",
+  "projectNet": "Réseaux"
 }

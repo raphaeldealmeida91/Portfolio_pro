@@ -8,6 +8,8 @@ import {
   ListItem,
   ListItemButton,
   ListItemIcon,
+  Menu,
+  MenuItem,
   Typography,
 } from "@mui/material";
 import { useColorScheme } from "@mui/material/styles";
@@ -25,12 +27,22 @@ import WorkIcon from "@mui/icons-material/Work";
 import WalletIcon from "@mui/icons-material/Wallet";
 import { useNavigate } from "react-router-dom";
 import EmailIcon from "@mui/icons-material/Email";
+import CodeIcon from "@mui/icons-material/Code";
+import CloudIcon from "@mui/icons-material/Cloud";
 
 const views = [
   { text: "home", icon: <HomeIcon />, nav: "/" },
   { text: "about", icon: <PersonIcon />, nav: "/about" },
   { text: "skills", icon: <WalletIcon />, nav: "/skills" },
-  { text: "project", icon: <AccountTreeIcon />, nav: "/projects" },
+  {
+    text: "project",
+    icon: <AccountTreeIcon />,
+    nav: "/projects",
+    children: [
+      { text: "projectDev", nav: "/projects/development", icon: <CodeIcon /> },
+      { text: "projectNet", nav: "/projects/network", icon: <CloudIcon /> },
+    ],
+  },
   { text: "examE6", icon: <SchoolIcon />, nav: "/epreuve-e6" },
   { text: "experience", icon: <WorkIcon />, nav: "/experience" },
   { text: "Contact", icon: <EmailIcon />, nav: "/contact" },
@@ -53,6 +65,9 @@ const Navigation = () => {
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language);
   };
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const isProjectMenuOpen = Boolean(anchorEl);
+  const [openProjectDropdown, setOpenProjectDropdown] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -78,8 +93,18 @@ const Navigation = () => {
   }
 
   const handleNavDrawer = (nav: string) => {
+    setOpenProjectDropdown(false);
+    setAnchorEl(null);
     setOpenMenu(false);
     navigate(nav);
+  };
+
+  const handleProjectClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleProjectClose = () => {
+    setAnchorEl(null);
   };
 
   return (
@@ -116,28 +141,53 @@ const Navigation = () => {
           gap: 2,
         }}
       >
-        {views.map(({ text, nav }, index) => (
-          <Button
-            id={`btn-nav-${index}`}
-            key={index}
-            onClick={() => navigate(nav)}
-            sx={{
-              textTransform: "initial",
-              color: isDark ? "#FFF" : "#000",
-              display: { xs: "none", lg: "flex" },
-            }}
-          >
-            <Typography
-              variant="body1"
+        {views.map(({ text, nav }, index) => {
+          if (text === "project") {
+            return (
+              <Button
+                id={`btn-nav-${index}`}
+                key={index}
+                onClick={handleProjectClick}
+                sx={{
+                  textTransform: "initial",
+                  color: isDark ? "#FFF" : "#000",
+                  display: { xs: "none", lg: "flex" },
+                }}
+              >
+                <Typography
+                  variant="body1"
+                  sx={{
+                    fontWeight: "bold",
+                  }}
+                >
+                  {t(text)}
+                </Typography>
+              </Button>
+            );
+          }
+
+          return (
+            <Button
+              id={`btn-nav-${index}`}
+              key={index}
               onClick={() => navigate(nav)}
               sx={{
-                fontWeight: "bold",
+                textTransform: "initial",
+                color: isDark ? "#FFF" : "#000",
+                display: { xs: "none", lg: "flex" },
               }}
             >
-              {t(text)}
-            </Typography>
-          </Button>
-        ))}
+              <Typography
+                variant="body1"
+                sx={{
+                  fontWeight: "bold",
+                }}
+              >
+                {t(text)}
+              </Typography>
+            </Button>
+          );
+        })}
 
         {mode === "light" ? (
           <IconButton onClick={() => setMode("dark")} id="dark-mode">
@@ -207,22 +257,102 @@ const Navigation = () => {
                 </Button>
               </Box>
               <Divider />
-              {views.map(({ text, icon, nav }, index) => (
-                <ListItem key={index} disablePadding>
-                  <ListItemButton
-                    id={`btn-nav-mobile-${index}`}
-                    onClick={() => handleNavDrawer(nav)}
+              {views.map(({ text, nav, children, icon }, index) =>
+                children ? (
+                  <ListItem
+                    key={index}
+                    disablePadding
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      width: "100%",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
                   >
-                    <ListItemIcon>{icon}</ListItemIcon>
-                    <Typography sx={{ fontWeight: "bold" }} variant="body1">
-                      {t(text)}
-                    </Typography>
-                  </ListItemButton>
-                </ListItem>
-              ))}
+                    <ListItemButton
+                      id={`btn-nav-mobile-${index}`}
+                      onClick={() =>
+                        setOpenProjectDropdown(!openProjectDropdown)
+                      }
+                      sx={{ display: "flex", width: "100%" }}
+                    >
+                      <ListItemIcon>{icon}</ListItemIcon>
+                      <Typography variant="body1" sx={{ fontWeight: "bold" }}>
+                        {t(text)}
+                      </Typography>
+                    </ListItemButton>
+                    <Box
+                      sx={{
+                        display: openProjectDropdown ? "flex" : "none",
+                        flexDirection: "column",
+                      }}
+                    >
+                      {children.map((child, i) => (
+                        <ListItemButton
+                          id={`btn-nav-mobile-${index}`}
+                          key={i}
+                          onClick={() => handleNavDrawer(child.nav)}
+                          sx={{ display: "flex", width: "100%" }}
+                        >
+                          <ListItemIcon>{child.icon}</ListItemIcon>
+                          <Typography
+                            variant="body1"
+                            sx={{ fontWeight: "bold" }}
+                          >
+                            {t(child.text)}
+                          </Typography>
+                        </ListItemButton>
+                      ))}
+                    </Box>
+                  </ListItem>
+                ) : (
+                  <ListItem key={index} disablePadding>
+                    <ListItemButton
+                      id={`btn-nav-mobile-${index}`}
+                      onClick={() => handleNavDrawer(nav)}
+                    >
+                      <ListItemIcon>{icon}</ListItemIcon>
+                      <Typography variant="body1" sx={{ fontWeight: "bold" }}>
+                        {t(text)}
+                      </Typography>
+                    </ListItemButton>
+                  </ListItem>
+                )
+              )}
             </List>
           </Box>
         </Drawer>
+        <Menu
+          id="project-menu"
+          anchorEl={anchorEl}
+          open={isProjectMenuOpen}
+          onClose={handleProjectClose}
+          MenuListProps={{
+            "aria-labelledby": "btn-nav-project",
+          }}
+        >
+          <MenuItem onClick={() => handleNavDrawer("/projects/development")}>
+            <Typography
+              variant="body1"
+              sx={{
+                fontWeight: "bold",
+              }}
+            >
+              {t("projectDev")}
+            </Typography>
+          </MenuItem>
+          <MenuItem onClick={() => handleNavDrawer("/projects/network")}>
+            <Typography
+              variant="body1"
+              sx={{
+                fontWeight: "bold",
+              }}
+            >
+              {t("projectNet")}
+            </Typography>
+          </MenuItem>
+        </Menu>
       </Box>
     </Box>
   );

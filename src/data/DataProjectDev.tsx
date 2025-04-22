@@ -1,9 +1,13 @@
 import SFR from "../assets/sfr.jpeg";
 import Acenstream from "../assets/acenstream.jpeg";
 import Acensigne from "../assets/acensigne.jpeg";
-import Koabuy from "../assets/Koabuy.png";
+import Koabuy from "../assets/koabuy.png";
 import Patterns from "../assets/patterns-in-your-life.jpeg";
 import Society2production from "../assets/society2production.png";
+import Besnik from "../assets/besnik.png";
+import Leloponalobi from "../assets/leloponalobi.png";
+import ManageFreelance from "../assets/managing.png";
+import Quickit from "../assets/quickit.png";
 
 export const SFRPro = {
   title: "Etiquette unifiée SFR - Projet professionnel chez Acensi",
@@ -99,8 +103,45 @@ export const Society2ProductionPro = {
   title: "Society2production - Projet personnel",
   period: "2025",
   description:
-    "Society2production est un site permettant de réserver un shooting photo ( une séance photo ) et de montrer les talents et les photos que Society2production a pu produire.",
+    "Society2production est un site web que j’ai développé pour un collectif de jeunes entrepreneurs passionnés de photographie, dont je fais partie. Il permet de réserver une séance photo en ligne et sert de vitrine pour présenter nos réalisations et mettre en valeur notre savoir-faire.",
   stacks: ["ViteJs", "Material U.I", "Framer-motion", "CSS", "EmailJS"],
   image: Society2production,
   link: "https://society2production.onrender.com/",
+};
+
+export const LeloponalobiPro = {
+  title: "Lelo Pona Lobi - Projet professionnel pour une association",
+  period: "2025",
+  description:
+    "Lelo Pona Lobi est un site web que j’ai développé pour une association dont je suis membre. Il répond aux besoins spécifiques d’une structure associative et propose plusieurs fonctionnalités : inscription à une newsletter, ajout de commentaires et de réactions sur les articles et actions de l’association, ainsi qu’une page de contact avec formulaire par e-mail.",
+  stacks: ["ViteJs", "Material U.I", "CSS", "EmailJS", "Mailchimp"],
+  image: Leloponalobi,
+  link: "https://leloponalobi.onrender.com/",
+};
+
+export const QuickitPro = {
+  title: "Quickit - Projet personnel",
+  period: "2021",
+  description: "Landing page basé sur une maquette FIGMA.",
+  stacks: ["React.js", "Bootstrap", "CSS"],
+  image: Quickit,
+  link: "https://landing-page-quickit.onrender.com/",
+};
+
+export const ManageFreelancePro = {
+  title: "Manage Freelance - Projet personnel",
+  period: "2021",
+  description: "Landing page basé sur une maquette FIGMA.",
+  stacks: ["React.js", "Material U.I", "CSS"],
+  image: ManageFreelance,
+  link: "https://landing-page-quickit.onrender.com/",
+};
+
+export const BesnikPro = {
+  title: "Besnik - Projet personnel",
+  period: "2022",
+  description: "Landing page basé sur une maquette FIGMA.",
+  stacks: ["React.js", "Material U.I", "CSS"],
+  image: Besnik,
+  link: "https://landing-page-mui.onrender.com",
 };
