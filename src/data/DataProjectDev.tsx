@@ -2,12 +2,12 @@ import SFR from "../assets/sfr.jpeg";
 import Acenstream from "../assets/acenstream.jpeg";
 import Acensigne from "../assets/acensigne.jpeg";
 import Koabuy from "../assets/koabuy.png";
-import Patterns from "../assets/patterns-in-your-life.jpeg";
-import Society2production from "../assets/society2production.png";
+import Patterns from "../assets/patterns-in-your-life.avif";
+import Society2production from "../assets/society2production.avif";
 import Besnik from "../assets/besnik.png";
-import Leloponalobi from "../assets/leloponalobi.png";
-import ManageFreelance from "../assets/managing.png";
-import Quickit from "../assets/quickit.png";
+import Leloponalobi from "../assets/leloponalobi.avif";
+import ManageFreelance from "../assets/managing.avif";
+import Quickit from "../assets/quickit.avif";
 
 export const SFRPro = {
   title: "Etiquette unifiée SFR - Projet professionnel chez Acensi",
