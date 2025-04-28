@@ -11,15 +11,15 @@ import EpreuveE6 from "./views/EpreuveE6";
 import ProjectsDevelopment from "./views/ProjectsDevelopment";
 import ProjectsNetwork from "./views/ProjectsNetwork";
 import PdfViewer from "./components/PdfViewer";
-import NGINX from "../docs/NGINX.pdf";
-import DHCP from "../docs/DHCP.pdf";
-import DNS from "../docs/DNS.pdf";
-import InterVlan from "../docs/InterVlan.pdf";
-import NAT from "../docs/NAT.pdf";
-import ACL from "../docs/ACL.pdf";
-import VTP from "../docs/VTP.pdf";
-import OSFP from "../docs/OSPF.pdf";
-import HSRP from "../docs/HSRP.pdf";
+import NGINX from "./docs/NGINX.pdf";
+import DHCP from "./docs/DHCP.pdf";
+import DNS from "./docs/DNS.pdf";
+import InterVlan from "./docs/InterVlan.pdf";
+import NAT from "./docs/NAT.pdf";
+import ACL from "./docs/ACL.pdf";
+import VTP from "./docs/VTP.pdf";
+import OSFP from "./docs/OSPF.pdf";
+import HSRP from "./docs/HSRP.pdf";
 
 function App() {
   return (
