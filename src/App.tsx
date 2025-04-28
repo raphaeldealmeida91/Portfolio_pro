@@ -11,8 +11,15 @@ import EpreuveE6 from "./views/EpreuveE6";
 import ProjectsDevelopment from "./views/ProjectsDevelopment";
 import ProjectsNetwork from "./views/ProjectsNetwork";
 import PdfViewer from "./components/PdfViewer";
-import { ProjectsSystemData } from "./data/DataProjectSystem";
-import { ProjectsNetworkData } from "./data/DataProjectNetwork";
+import NGINX from "../docs/NGINX.pdf";
+import DHCP from "../docs/DHCP.pdf";
+import DNS from "../docs/DNS.pdf";
+import InterVlan from "../docs/InterVlan.pdf";
+import NAT from "../docs/NAT.pdf";
+import ACL from "../docs/ACL.pdf";
+import VTP from "../docs/VTP.pdf";
+import OSFP from "../docs/OSPF.pdf";
+import HSRP from "../docs/HSRP.pdf";
 
 function App() {
   return (
@@ -37,22 +44,78 @@ function App() {
         <Route path="/experience" element={<Experience />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Home />} />
-        {ProjectsSystemData.map((project) => (
-          <Route
-            key={project.namePage}
-            path={`/projects/system/${project.namePage}`}
-            element={<PdfViewer pdfUrl={project.pdfUrl} />}
-          />
-        ))}
-        {ProjectsNetworkData.map((project) => {
-          return (
-            <Route
-              key={project.namePage}
-              path={`/projects/network/${project.namePage}`}
-              element={<PdfViewer pdfUrl={project.pdfUrl} />}
-            />
-          );
-        })}
+        /* System */
+        <Route
+          key="nginx"
+          path={`/projects/system/nginx`}
+          element={<PdfViewer pdfUrl={NGINX} />}
+        />
+        <Route
+          key="dhcp"
+          path={`/projects/system/dhcp`}
+          element={<PdfViewer pdfUrl={NGINX} />}
+        />
+        <Route
+          key="guacamole"
+          path={`/projects/system/guacamole`}
+          element={<PdfViewer pdfUrl={NGINX} />}
+        />
+        <Route
+          key="glpi"
+          path={`/projects/system/glpi`}
+          element={<PdfViewer pdfUrl={NGINX} />}
+        />
+        <Route
+          key="vnc"
+          path={`/projects/system/vnc`}
+          element={<PdfViewer pdfUrl={NGINX} />}
+        />
+        <Route
+          key="cec-utils"
+          path={`/projects/system/cec-utils`}
+          element={<PdfViewer pdfUrl={NGINX} />}
+        />
+        /* Network */
+        <Route
+          key="dhcp-cisco"
+          path={`/projects/network/dhcp-cisco`}
+          element={<PdfViewer pdfUrl={DHCP} />}
+        />
+        <Route
+          key="dns-cisco"
+          path={`/projects/network/dns-cisco`}
+          element={<PdfViewer pdfUrl={DNS} />}
+        />
+        <Route
+          key="intervlan-cisco"
+          path={`/projects/network/intervlan-cisco`}
+          element={<PdfViewer pdfUrl={InterVlan} />}
+        />
+        <Route
+          key="nat-cisco"
+          path={`/projects/network/nat-cisco`}
+          element={<PdfViewer pdfUrl={NAT} />}
+        />
+        <Route
+          key="acl-cisco"
+          path={`/projects/network/acl-cisco`}
+          element={<PdfViewer pdfUrl={ACL} />}
+        />
+        <Route
+          key="vtp-cisco"
+          path={`/projects/network/vtp-cisco`}
+          element={<PdfViewer pdfUrl={VTP} />}
+        />
+        <Route
+          key="ospf-cisco"
+          path={`/projects/network/ospf-cisco`}
+          element={<PdfViewer pdfUrl={OSFP} />}
+        />
+        <Route
+          key="hsrp-cisco"
+          path={`/projects/network/hsrp-cisco`}
+          element={<PdfViewer pdfUrl={HSRP} />}
+        />
       </Routes>
       <Box
         sx={{
