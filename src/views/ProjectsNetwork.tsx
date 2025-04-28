@@ -133,8 +133,6 @@ const ProjectsNetwork = () => {
                     <Button
                       size="small"
                       href={`system/${project.namePage}`}
-                      target="_blank"
-                      rel="noopener"
                       endIcon={<Launch />}
                       sx={{ ml: 1 }}
                     >
@@ -214,8 +212,6 @@ const ProjectsNetwork = () => {
                     <Button
                       size="small"
                       href={`network/${project.namePage}`}
-                      target="_blank"
-                      rel="noopener"
                       endIcon={<Launch />}
                       sx={{ ml: 1 }}
                     >

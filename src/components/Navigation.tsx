@@ -18,7 +18,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { useTranslation } from "react-i18next";
 import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
@@ -68,6 +68,12 @@ const Navigation = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const isProjectMenuOpen = Boolean(anchorEl);
   const [openProjectDropdown, setOpenProjectDropdown] = useState(false);
+
+  useEffect(() => {
+    if (mode === "system" || mode === undefined) {
+      setMode("light");
+    }
+  }, [mode, setMode]);
 
   // useEffect(() => {
   //   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
