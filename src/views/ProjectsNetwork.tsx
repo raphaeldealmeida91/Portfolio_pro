@@ -15,11 +15,13 @@ import { useTranslation } from "react-i18next";
 import { Launch } from "@mui/icons-material";
 import { ProjectsSystemData } from "../data/DataProjectSystem";
 import { ProjectsNetworkData } from "../data/DataProjectNetwork";
+import { useNavigate } from "react-router-dom";
 
 const ProjectsNetwork = () => {
   const { mode } = useColorScheme();
   const isDark = mode === "dark";
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <Box>
@@ -132,7 +134,7 @@ const ProjectsNetwork = () => {
                   <CardActions>
                     <Button
                       size="small"
-                      href={`system/${project.namePage}`}
+                      onClick={() => navigate(`/projects/${project.namePage}`)}
                       endIcon={<Launch />}
                       sx={{ ml: 1 }}
                     >
@@ -211,7 +213,7 @@ const ProjectsNetwork = () => {
                   <CardActions>
                     <Button
                       size="small"
-                      href={`network/${project.namePage}`}
+                      onClick={() => navigate(`/projects/${project.namePage}`)}
                       endIcon={<Launch />}
                       sx={{ ml: 1 }}
                     >

@@ -46,74 +46,51 @@ function App() {
         <Route path="*" element={<Home />} />
         /* System */
         <Route
-          key="nginx"
-          path={`/projects/system/nginx`}
+          path={`/projects/nginx`}
           element={<PdfViewer pdfUrl={NGINX} />}
         />
+        <Route path={`/projects/dhcp`} element={<PdfViewer pdfUrl={NGINX} />} />
         <Route
-          key="dhcp"
-          path={`/projects/system/dhcp`}
+          path={`/projects/guacamole`}
           element={<PdfViewer pdfUrl={NGINX} />}
         />
+        <Route path={`/projects/glpi`} element={<PdfViewer pdfUrl={NGINX} />} />
+        <Route path={`/projects/vnc`} element={<PdfViewer pdfUrl={NGINX} />} />
         <Route
-          key="guacamole"
-          path={`/projects/system/guacamole`}
-          element={<PdfViewer pdfUrl={NGINX} />}
-        />
-        <Route
-          key="glpi"
-          path={`/projects/system/glpi`}
-          element={<PdfViewer pdfUrl={NGINX} />}
-        />
-        <Route
-          key="vnc"
-          path={`/projects/system/vnc`}
-          element={<PdfViewer pdfUrl={NGINX} />}
-        />
-        <Route
-          key="cec-utils"
-          path={`/projects/system/cec-utils`}
+          path={`/projects/cec-utils`}
           element={<PdfViewer pdfUrl={NGINX} />}
         />
         /* Network */
         <Route
-          key="dhcp-cisco"
-          path={`/projects/network/dhcp-cisco`}
+          path={`/projects/dhcp-cisco`}
           element={<PdfViewer pdfUrl={DHCP} />}
         />
         <Route
-          key="dns-cisco"
-          path={`/projects/network/dns-cisco`}
+          path={`/projects/dns-cisco`}
           element={<PdfViewer pdfUrl={DNS} />}
         />
         <Route
-          key="intervlan-cisco"
-          path={`/projects/network/intervlan-cisco`}
+          path={`/projects/intervlan-cisco`}
           element={<PdfViewer pdfUrl={InterVlan} />}
         />
         <Route
-          key="nat-cisco"
-          path={`/projects/network/nat-cisco`}
+          path={`/projects/nat-cisco`}
           element={<PdfViewer pdfUrl={NAT} />}
         />
         <Route
-          key="acl-cisco"
-          path={`/projects/network/acl-cisco`}
+          path={`/projects/acl-cisco`}
           element={<PdfViewer pdfUrl={ACL} />}
         />
         <Route
-          key="vtp-cisco"
-          path={`/projects/network/vtp-cisco`}
+          path={`/projects/vtp-cisco`}
           element={<PdfViewer pdfUrl={VTP} />}
         />
         <Route
-          key="ospf-cisco"
-          path={`/projects/network/ospf-cisco`}
+          path={`/projects/ospf-cisco`}
           element={<PdfViewer pdfUrl={OSFP} />}
         />
         <Route
-          key="hsrp-cisco"
-          path={`/projects/network/hsrp-cisco`}
+          path={`/projects/hsrp-cisco`}
           element={<PdfViewer pdfUrl={HSRP} />}
         />
       </Routes>
