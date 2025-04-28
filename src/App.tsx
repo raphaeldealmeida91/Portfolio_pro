@@ -10,6 +10,9 @@ import Contact from "./views/Contact";
 import EpreuveE6 from "./views/EpreuveE6";
 import ProjectsDevelopment from "./views/ProjectsDevelopment";
 import ProjectsNetwork from "./views/ProjectsNetwork";
+import PdfViewer from "./components/PdfViewer";
+import { ProjectsSystemData } from "./data/DataProjectSystem";
+import { ProjectsNetworkData } from "./data/DataProjectNetwork";
 
 function App() {
   return (
@@ -34,6 +37,22 @@ function App() {
         <Route path="/experience" element={<Experience />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Home />} />
+        {ProjectsSystemData.map((project) => (
+          <Route
+            key={project.namePage}
+            path={`/projects/system/${project.namePage}`}
+            element={<PdfViewer pdfUrl={project.pdfUrl} />}
+          />
+        ))}
+        {ProjectsNetworkData.map((project) => {
+          return (
+            <Route
+              key={project.namePage}
+              path={`/projects/network/${project.namePage}`}
+              element={<PdfViewer pdfUrl={project.pdfUrl} />}
+            />
+          );
+        })}
       </Routes>
       <Box
         sx={{

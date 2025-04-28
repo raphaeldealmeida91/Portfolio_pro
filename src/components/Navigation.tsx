@@ -18,7 +18,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { useTranslation } from "react-i18next";
 import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonIcon from "@mui/icons-material/Person";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
@@ -48,17 +48,17 @@ const views = [
   { text: "Contact", icon: <EmailIcon />, nav: "/contact" },
 ];
 
-const getPreferredTheme = () => {
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  return prefersDark ? "dark" : "light";
-};
+// const getPreferredTheme = () => {
+//   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+//   return prefersDark ? "dark" : "light";
+// };
 
 const Navigation = () => {
   const { mode, setMode } = useColorScheme();
   const isDark = mode === "dark";
-  const [defaultMode, setDefaultMode] = useState<"dark" | "light" | null>(
-    getPreferredTheme()
-  );
+  // const [defaultMode, setDefaultMode] = useState<"dark" | "light" | null>(
+  //   getPreferredTheme()
+  // );
   const [openMenu, setOpenMenu] = useState(false);
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
@@ -69,28 +69,28 @@ const Navigation = () => {
   const isProjectMenuOpen = Boolean(anchorEl);
   const [openProjectDropdown, setOpenProjectDropdown] = useState(false);
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = () => {
-      const newMode = mediaQuery.matches ? "dark" : "light";
-      setDefaultMode(newMode);
-      if (mode === undefined) {
-        setMode(newMode);
-      }
-    };
+  // useEffect(() => {
+  //   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  //   const handleChange = () => {
+  //     const newMode = mediaQuery.matches ? "dark" : "light";
+  //     setDefaultMode(newMode);
+  //     if (mode === undefined) {
+  //       setMode(newMode);
+  //     }
+  //   };
 
-    mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
-  }, [mode, setMode]);
+  //   mediaQuery.addEventListener("change", handleChange);
+  //   return () => mediaQuery.removeEventListener("change", handleChange);
+  // }, [mode, setMode]);
 
-  if (mode === undefined) {
-    if (defaultMode) {
-      setMode(defaultMode);
-    } else {
-      setMode("system");
-    }
-    return null;
-  }
+  // if (mode === undefined) {
+  //   if (defaultMode) {
+  //     setMode(defaultMode);
+  //   } else {
+  //     setMode("system");
+  //   }
+  //   return null;
+  // }
 
   const handleNavDrawer = (nav: string) => {
     setOpenProjectDropdown(false);

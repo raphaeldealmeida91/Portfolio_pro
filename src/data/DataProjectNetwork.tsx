@@ -1,75 +1,92 @@
-import DHCP from "../assets/dhcp.jpg";
-import Nginx from "../assets/nginx.jpg";
-import Glpi from "../assets/glpi.webp";
-import Guacamole from "../assets/guacamole.avif";
-import OCS from "../assets/ocs.jpg";
-import Lamp from "../assets/lamp.jpg";
-import VNC from "../assets/vnc.png";
-import CecUtils from "../assets/cecutils.webp";
-import Pfsense from "../assets/pfsense.avif";
+import DHCP from "../docs/DHCP.pdf";
+import DNS from "../docs/DNS.pdf";
+import InterVlan from "../docs/InterVlan.pdf";
+import NAT from "../docs/NAT.pdf";
+import ACL from "../docs/ACL.pdf";
+import VTP from "../docs/VTP.pdf";
+import OSFP from "../docs/OSPF.pdf";
+import HSRP from "../docs/HSRP.pdf";
+import DHCPImg from "../assets/DHCP.png";
+import DNSImg from "../assets/DNS.png";
+import InterVlanImg from "../assets/VLAN.png";
+import NATImg from "../assets/NAT.png";
+import ACLImg from "../assets/ACL.png";
+import VTPImg from "../assets/VTP.png";
+import OSFPImg from "../assets/OSFP.png";
+import HSRPImg from "../assets/HSRP.png";
 
 export const ProjectsNetworkData = [
   {
     id: 1,
-    title: "Serveur Web avec Nginx et PHP - Debian 12",
-    description: `• Installation et configuration de Nginx\n• Création d’un site statique\n• Intégration de PHP via php-fpm\n• Validation du fonctionnement du serveur\n• Administration basique sous Debian`,
-    image: Nginx,
-    pdfUrl: "/docs/nginx_project.pdf",
+    title: "Serveur DHCP - Cisco Packet tracer",
+    description: `Configuration d'un serveur DHCP pour l'attribution automatique d'adresses IP. 
+    Compétences : gestion des pools d'adresses, configuration réseau dynamique, résolution de problèmes de connectivité.`,
+    image: DHCPImg,
+    namePage: "dhcp-cisco",
+    pdfUrl: DHCP,
   },
   {
     id: 2,
-    title: "Serveur DHCP - Debian 12",
-    description: `• Installation d’isc-dhcp-server\n• Configuration du fichier dhcpd.conf\n• Attribution dynamique et statique des IP\n• Vérification du fonctionnement DHCP\n• Gestion réseau automatisée`,
-    image: DHCP,
-    pdfUrl: "/docs/dhcp_project.pdf",
+    title: "Serveur DNS et serveur Web - Cisco Packet tracer",
+    description: `Déploiement d'un serveur DNS pour la résolution de noms et d'un serveur Web pour l'hébergement de sites.
+    Compétences : enregistrement de domaines, redirection d'URL, diagnostic des erreurs DNS.`,
+    image: DNSImg,
+    namePage: "dns-cisco",
+    pdfUrl: DNS,
   },
   {
     id: 3,
-    title: "Architecture LAMP 3-tiers avec DNS",
-    description: `• Déploiement de Bind9, Apache, MySQL et PHP\n• Résolution DNS interne\n• Architecture 3-tiers séparée (Web / App / DB)\n• Tests avec site dynamique PHP/MySQL\n• Sécurisation de la pile serveur`,
-    image: Lamp,
-    pdfUrl: "/docs/lamp_project.pdf",
+    title: "VLAN et routage interVLAN - Cisco Packet tracer",
+    description: `Création de VLAN pour segmenter un réseau et mise en place du routage interVLAN pour assurer la communication entre eux.
+    Compétences : segmentation réseau, configuration de trunk, amélioration de la sécurité et de la performance réseau.`,
+    image: InterVlanImg,
+    namePage: "intervlan-cisco",
+    pdfUrl: InterVlan,
   },
   {
     id: 4,
-    title: "Bastion d’administration avec Apache Guacamole",
-    description: `• Installation sur Ubuntu 24\n• Accès distant via RDP, SSH, VNC\n• Interface web sécurisée\n• Configuration des connexions\n• Administration sans client local`,
-    image: Guacamole,
-    pdfUrl: "/docs/guacamole_project.pdf",
+    title: "Configuration d’un NAT - Cisco Packet tracer",
+    description: `Mise en place du NAT (Network Address Translation) pour permettre l'accès à Internet depuis un réseau privé.
+    Compétences : translation d'adresses IP, sécurité des réseaux internes, gestion des flux sortants.`,
+    image: NATImg,
+    namePage: "nat-cisco",
+    pdfUrl: NAT,
   },
   {
     id: 5,
-    title: "Gestion d’inventaire avec OCS Inventory",
-    description: `• Installation du serveur OCS 2.12\n• Déploiement d’agents sur postes clients\n• Collecte automatisée de données\n• Interface d’administration web\n• Vue globale du parc informatique`,
-    image: OCS,
-    pdfUrl: "/docs/ocs_project.pdf",
+    title: "Filtrage ACL - Cisco Packet tracer",
+    description: `Création et application d'ACL (Access Control Lists) pour contrôler le trafic réseau et renforcer la sécurité.
+    Compétences : filtrage du trafic, définition de règles d'accès, sécurisation de l'infrastructure.`,
+    image: ACLImg,
+    namePage: "acl-cisco",
+    pdfUrl: ACL,
   },
   {
     id: 6,
-    title: "Gestion des services IT avec GLPI",
-    description: `• Déploiement de GLPI sous Debian 12\n• Intégration avec OCS Inventory\n• Gestion des utilisateurs et tickets\n• Suivi des matériels et interventions\n• Interface web intuitive`,
-    image: Glpi,
-    pdfUrl: "/docs/glpi_project.pdf",
+    title:
+      "Mise en place et utilisation du protocole VTP - Cisco Packet tracer",
+    description: `Implémentation du protocole VTP (VLAN Trunking Protocol) pour simplifier la gestion des VLANs sur plusieurs switches.
+    Compétences : centralisation de la gestion VLAN, synchronisation automatique, optimisation de la configuration réseau.`,
+    image: VTPImg,
+    namePage: "vtp-cisco",
+    pdfUrl: VTP,
   },
   {
     id: 7,
-    title: "Pare-feu et sécurité réseau avec pfSense",
-    description: `• Installation et configuration de pfSense\n• Règles de filtrage, NAT et VLAN\n• Redirection de ports\n• Configuration DHCP et multi-WAN\n• Supervision via interface graphique`,
-    image: Pfsense,
-    pdfUrl: "/docs/pfsense_project.pdf",
+    title: "Configuration OSPF - Cisco Packet tracer",
+    description: `Déploiement du protocole de routage OSPF (Open Shortest Path First) pour un routage interne efficace.
+    Compétences : conception d'architecture réseau scalable, calcul du meilleur chemin, gestion des routes dynamiques.`,
+    image: OSFPImg,
+    namePage: "ospf-cisco",
+    pdfUrl: OSFP,
   },
   {
     id: 8,
-    title: "Accès distant Raspberry Pi via VNC et Websockify",
-    description: `• Installation de VNC Server sur Raspberry Pi OS\n• Configuration d’accès à distance via navigateur\n• Utilisation de Websockify pour relier VNC au web\n• Sécurisation des connexions via mot de passe\n• Utilisation dans un environnement sans écran`,
-    image: VNC,
-    pdfUrl: "/docs/raspi_vnc.pdf",
-  },
-  {
-    id: 9,
-    title: "Contrôle HDMI-CEC avec Raspberry Pi OS",
-    description: `• Installation de libcec sur Raspberry Pi OS\n• Contrôle de la télévision via HDMI (allumage, veille)\n• Intégration avec une interface React pour pilotage\n• Communication entre navigateur et Pi via WebSockets\n• Automatisation du contrôle à distance de l’affichage`,
-    image: CecUtils,
-    pdfUrl: "/docs/raspi_cec.pdf",
+    title: "Configuration HSRP - Cisco Packet tracer",
+    description: `Mise en œuvre du protocole HSRP (Hot Standby Router Protocol) pour assurer la haute disponibilité réseau.
+    Compétences : tolérance aux pannes, redondance de la passerelle par défaut, continuité de service en cas de défaillance.`,
+    image: HSRPImg,
+    namePage: "hsrp-cisco",
+    pdfUrl: HSRP,
   },
 ];
