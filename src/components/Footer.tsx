@@ -15,7 +15,7 @@ const Footer = () => {
           width: "90%",
           justifyContent: "center",
           alignItems: "center",
-          padding: "50px 0",
+          padding: "20px 0",
           flexDirection: { xs: "column", md: "row" },
           overflowX: "hidden",
         }}

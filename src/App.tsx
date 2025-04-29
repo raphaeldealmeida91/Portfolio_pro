@@ -20,6 +20,7 @@ import ACL from "./docs/ACL.pdf";
 import VTP from "./docs/VTP.pdf";
 import OSFP from "./docs/OSPF.pdf";
 import HSRP from "./docs/HSRP.pdf";
+import TechMonitoring from "./views/TechMonitoring";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         <Route path="/projects/network" element={<ProjectsNetwork />} />
         <Route path="/epreuve-e6" element={<EpreuveE6 />} />
         <Route path="/experience" element={<Experience />} />
+        <Route path="//tech-monitoring" element={<TechMonitoring />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Home />} />
         /* System */

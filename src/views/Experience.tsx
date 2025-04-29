@@ -17,6 +17,7 @@ import {
   HightSchool,
   StageBresil,
   SupSchool,
+  SupSchool2,
 } from "../data/DataExperience";
 
 const Experience = () => {
@@ -99,7 +100,7 @@ const Experience = () => {
             }}
             position="right"
           >
-            {[AcensiJob, SupSchool, StageBresil, HightSchool].map(
+            {[SupSchool2, AcensiJob, SupSchool, StageBresil, HightSchool].map(
               (item, index) => (
                 <motion.div
                   key={index}

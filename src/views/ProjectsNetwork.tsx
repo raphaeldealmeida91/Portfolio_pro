@@ -71,7 +71,7 @@ const ProjectsNetwork = () => {
           sx={{
             fontWeight: "bold",
             textAlign: "center",
-            "& span": { color: "#00BFFF" },
+            "& span": { color: "#32CD32" },
           }}
           variant="h6"
         >

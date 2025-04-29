@@ -73,7 +73,8 @@ const EpreuveE6 = () => {
           }}
         >
           <Typography sx={{ fontWeight: "bold", display: "flex" }} variant="h6">
-            Projet 1 - GLPI User avec LDAP Active Direcory
+            Projet 1 - Gestion des services informatiques et des utilisateurs
+            avec GLPI et Active Directory
           </Typography>
           <Button
             id="btn-download-project1"

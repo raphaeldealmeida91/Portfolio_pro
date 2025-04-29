@@ -1,8 +1,10 @@
 import NGINX from "../docs/NGINX.pdf";
+import GLPI from "../docs/GLPI.pdf";
 import NGINXImg from "../assets/nginx.jpg";
 import DHCPImg from "../assets/dhcp.jpg";
 import GLPIImg from "../assets/glpi.webp";
 import GUACAMOLEImg from "../assets/guacamole.avif";
+import BLOCKYImg from "../assets/blocky.jpeg";
 import VNCImg from "../assets/vnc.png";
 import CECUTILSImg from "../assets/cecutils.webp";
 
@@ -36,15 +38,26 @@ export const ProjectsSystemData = [
   },
   {
     id: 4,
-    title: "Gestion des services IT avec GLPI",
+    title:
+      "Gestion des services informatiques et des utilisateurs avec GLPI et Active Directory",
     description: `Installation et configuration de GLPI pour la gestion de parc informatique et des demandes d'assistance.
     Compétences : gestion des assets IT, tickets d'incidents, administration de solutions de gestion ITSM (IT Service Management).`,
     image: GLPIImg,
     namePage: "glpi",
-    pdfUrl: NGINX,
+    pdfUrl: GLPI,
   },
   {
     id: 5,
+    title:
+      "Blocky solution pour bloquer les publicités et les sites malveillants sur un réseau",
+    description: `Déploiement de Blocky pour bloquer les publicités et sites malveillants via un filtrage DNS.
+    Compétences : configuration et gestion de Blocky, filtrage DNS, sécurisation des réseaux, gestion des accès réseau.`,
+    image: BLOCKYImg,
+    namePage: "blocky",
+    pdfUrl: NGINX,
+  },
+  {
+    id: 6,
     title: "Accès distant Raspberry Pi via VNC et Websockify",
     description: `Mise en place d'un accès distant sécurisé à un Raspberry Pi via VNC couplé à Websockify pour utilisation depuis un navigateur.
     Compétences : configuration de VNC Server, tunnels Websockify, gestion de la sécurité des accès distants.`,
@@ -53,7 +66,7 @@ export const ProjectsSystemData = [
     pdfUrl: NGINX,
   },
   {
-    id: 6,
+    id: 7,
     title: "Contrôle des télés via HDMI-CEC avec Raspberry Pi OS",
     description: `Développement d'une solution pour piloter des téléviseurs via le protocole HDMI-CEC à l'aide d'un Raspberry Pi.
     Compétences : utilisation du protocole CEC, scripts d'automatisation en ligne de commande, interaction avec des équipements audiovisuels.`,

@@ -29,6 +29,7 @@ import { useNavigate } from "react-router-dom";
 import EmailIcon from "@mui/icons-material/Email";
 import CodeIcon from "@mui/icons-material/Code";
 import CloudIcon from "@mui/icons-material/Cloud";
+import ArticleIcon from "@mui/icons-material/Article";
 
 const views = [
   { text: "home", icon: <HomeIcon />, nav: "/" },
@@ -45,6 +46,11 @@ const views = [
   },
   { text: "examE6", icon: <SchoolIcon />, nav: "/epreuve-e6" },
   { text: "experience", icon: <WorkIcon />, nav: "/experience" },
+  {
+    text: "technologyMonitoring",
+    icon: <ArticleIcon />,
+    nav: "/tech-monitoring",
+  },
   { text: "Contact", icon: <EmailIcon />, nav: "/contact" },
 ];
 
