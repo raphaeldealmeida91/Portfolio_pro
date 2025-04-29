@@ -25,7 +25,7 @@ export const ProjectsSystemData = [
     Compétences : configuration d'étendues d'adresses, gestion d'attributions statiques, dépannage de la connectivité réseau.`,
     image: DHCPImg,
     namePage: "dhcp",
-    pdfUrl: NGINX,
+    pdfUrl: GLPI,
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ export const ProjectsSystemData = [
     Compétences : sécurisation des connexions RDP, SSH et VNC, centralisation des accès, authentification des utilisateurs.`,
     image: GUACAMOLEImg,
     namePage: "guacamole",
-    pdfUrl: NGINX,
+    pdfUrl: GLPI,
   },
   {
     id: 4,
@@ -54,7 +54,7 @@ export const ProjectsSystemData = [
     Compétences : configuration et gestion de Blocky, filtrage DNS, sécurisation des réseaux, gestion des accès réseau.`,
     image: BLOCKYImg,
     namePage: "blocky",
-    pdfUrl: NGINX,
+    pdfUrl: GLPI,
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ export const ProjectsSystemData = [
     Compétences : configuration de VNC Server, tunnels Websockify, gestion de la sécurité des accès distants.`,
     image: VNCImg,
     namePage: "vnc",
-    pdfUrl: NGINX,
+    pdfUrl: GLPI,
   },
   {
     id: 7,
@@ -72,6 +72,6 @@ export const ProjectsSystemData = [
     Compétences : utilisation du protocole CEC, scripts d'automatisation en ligne de commande, interaction avec des équipements audiovisuels.`,
     image: CECUTILSImg,
     namePage: "cec-utils",
-    pdfUrl: NGINX,
+    pdfUrl: GLPI,
   },
 ];
