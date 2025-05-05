@@ -3,7 +3,7 @@ import GLPI from "../docs/GLPI.pdf";
 import VNC from "../docs/VNC.pdf";
 import Guacamole from "../docs/Guacamole.pdf";
 import CEC_UTILS from "../docs/CEC_UTILS.pdf";
-import BLocky from "../docs/BLocky.pdf";
+import BLocky from "../docs/Blocky.pdf";
 import NGINXImg from "../assets/nginx.jpg";
 import DHCPImg from "../assets/dhcp.jpg";
 import GLPIImg from "../assets/glpi.webp";

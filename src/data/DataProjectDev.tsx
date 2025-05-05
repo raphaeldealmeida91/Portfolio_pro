@@ -124,7 +124,7 @@ export const LeloponalobiPro = {
     "Let's Encrypt",
   ],
   image: Leloponalobi,
-  link: "https://leloponalobi.onrender.com/",
+  link: "https://leloponalobi.org/",
 };
 
 export const QuickitPro = {
