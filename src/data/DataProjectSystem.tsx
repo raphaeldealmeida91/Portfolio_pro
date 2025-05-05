@@ -1,5 +1,9 @@
 import NGINX from "../docs/NGINX.pdf";
 import GLPI from "../docs/GLPI.pdf";
+import VNC from "../docs/VNC.pdf";
+import Guacamole from "../docs/Guacamole.pdf";
+import CEC_UTILS from "../docs/CEC_UTILS.pdf";
+import BLocky from "../docs/BLocky.pdf";
 import NGINXImg from "../assets/nginx.jpg";
 import DHCPImg from "../assets/dhcp.jpg";
 import GLPIImg from "../assets/glpi.webp";
@@ -34,7 +38,7 @@ export const ProjectsSystemData = [
     Compétences : sécurisation des connexions RDP, SSH et VNC, centralisation des accès, authentification des utilisateurs.`,
     image: GUACAMOLEImg,
     namePage: "guacamole",
-    pdfUrl: GLPI,
+    pdfUrl: Guacamole,
   },
   {
     id: 4,
@@ -49,12 +53,12 @@ export const ProjectsSystemData = [
   {
     id: 5,
     title:
-      "Blocky solution pour bloquer les publicités et les sites malveillants sur un réseau",
+      "Blocky solution pour bloquer les publicités et les sites malveillants sur un réseau + Grafana/Prometheus",
     description: `Déploiement de Blocky pour bloquer les publicités et sites malveillants via un filtrage DNS.
-    Compétences : configuration et gestion de Blocky, filtrage DNS, sécurisation des réseaux, gestion des accès réseau.`,
+    Compétences : configuration et gestion de Blocky, filtrage DNS, sécurisation des réseaux, gestion des accès réseau, monitoring et supervision du réseau.`,
     image: BLOCKYImg,
     namePage: "blocky",
-    pdfUrl: GLPI,
+    pdfUrl: BLocky,
   },
   {
     id: 6,
@@ -63,7 +67,7 @@ export const ProjectsSystemData = [
     Compétences : configuration de VNC Server, tunnels Websockify, gestion de la sécurité des accès distants.`,
     image: VNCImg,
     namePage: "vnc",
-    pdfUrl: GLPI,
+    pdfUrl: VNC,
   },
   {
     id: 7,
@@ -72,6 +76,6 @@ export const ProjectsSystemData = [
     Compétences : utilisation du protocole CEC, scripts d'automatisation en ligne de commande, interaction avec des équipements audiovisuels.`,
     image: CECUTILSImg,
     namePage: "cec-utils",
-    pdfUrl: GLPI,
+    pdfUrl: CEC_UTILS,
   },
 ];

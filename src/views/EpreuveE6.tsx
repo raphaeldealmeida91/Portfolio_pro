@@ -5,8 +5,10 @@ import {
   Typography,
   useColorScheme,
 } from "@mui/material";
-import Project1PDF from "/projet-1-doc.pdf";
-import Project2PDF from "/projet-2-doc.pdf";
+import Project1PDF from "/projet-1.pdf";
+import Project1PDFDoc from "/projet-1-doc.pdf";
+import Project2PDF from "/projet-2.pdf";
+import Project2PDFDoc from "/projet-2-doc.pdf";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import { useTranslation } from "react-i18next";
 
@@ -95,7 +97,7 @@ const EpreuveE6 = () => {
             id="btn-download-project1-doc"
             startIcon={<FileDownloadIcon />}
             variant="contained"
-            onClick={() => handleOpenProjects(Project1PDF)}
+            onClick={() => handleOpenProjects(Project1PDFDoc)}
             sx={{
               display: "flex",
               backgroundColor: "rgb(76, 86, 106)",
@@ -139,7 +141,7 @@ const EpreuveE6 = () => {
             id="btn-download-project2-doc"
             startIcon={<FileDownloadIcon />}
             variant="contained"
-            onClick={() => handleOpenProjects(Project2PDF)}
+            onClick={() => handleOpenProjects(Project2PDFDoc)}
             sx={{
               display: "flex",
               backgroundColor: "rgb(76, 86, 106)",

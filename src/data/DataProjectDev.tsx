@@ -113,8 +113,16 @@ export const LeloponalobiPro = {
   title: "Lelo Pona Lobi - Projet professionnel pour une association",
   period: "2025",
   description:
-    "Lelo Pona Lobi est un site web que j’ai développé pour une association dont je suis membre. Il répond aux besoins spécifiques d’une structure associative et propose plusieurs fonctionnalités : inscription à une newsletter, ajout de commentaires et de réactions sur les articles et actions de l’association, ainsi qu’une page de contact avec formulaire par e-mail.",
-  stacks: ["ViteJs", "Material U.I", "CSS", "EmailJS", "Mailchimp"],
+    "Lelo Pona Lobi est un site web que j’ai développé et déployé sur un VPS pour une association dont je suis membre. Il répond aux besoins spécifiques d’une structure associative et propose plusieurs fonctionnalités : inscription à une newsletter, ajout de commentaires et de réactions sur les articles et actions de l’association, ainsi qu’une page de contact avec formulaire par e-mail.",
+  stacks: [
+    "ViteJs",
+    "Material U.I",
+    "CSS",
+    "EmailJS",
+    "Mailchimp",
+    "NGINX",
+    "Let's Encrypt",
+  ],
   image: Leloponalobi,
   link: "https://leloponalobi.onrender.com/",
 };
