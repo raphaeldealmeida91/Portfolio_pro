@@ -3,7 +3,8 @@ import GLPI from "../docs/GLPI.pdf";
 import VNC from "../docs/VNC.pdf";
 import Guacamole from "../docs/Guacamole.pdf";
 import CEC_UTILS from "../docs/CEC_UTILS.pdf";
-import BLocky from "../docs/Blocky.pdf";
+import Blocky from "../docs/Blocky.pdf";
+import DHCP from "../docs/DHCPSYS.pdf";
 import NGINXImg from "../assets/nginx.jpg";
 import DHCPImg from "../assets/dhcp.jpg";
 import GLPIImg from "../assets/glpi.webp";
@@ -29,7 +30,7 @@ export const ProjectsSystemData = [
     Compétences : configuration d'étendues d'adresses, gestion d'attributions statiques, dépannage de la connectivité réseau.`,
     image: DHCPImg,
     namePage: "dhcp",
-    pdfUrl: GLPI,
+    pdfUrl: DHCP,
   },
   {
     id: 3,
@@ -58,7 +59,7 @@ export const ProjectsSystemData = [
     Compétences : configuration et gestion de Blocky, filtrage DNS, sécurisation des réseaux, gestion des accès réseau, monitoring et supervision du réseau.`,
     image: BLOCKYImg,
     namePage: "blocky",
-    pdfUrl: BLocky,
+    pdfUrl: Blocky,
   },
   {
     id: 6,

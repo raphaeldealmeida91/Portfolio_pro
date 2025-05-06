@@ -2,11 +2,9 @@ import {
   Box,
   Button,
   Card,
-  CardActions,
   CardContent,
   Container,
   Divider,
-  IconButton,
   Stack,
   Typography,
   useColorScheme,
@@ -18,11 +16,8 @@ import {
   Warning,
   Visibility,
   Grass,
-  ArrowBackIos,
-  ArrowForwardIos,
 } from "@mui/icons-material";
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
 
 const articles = [
   {
@@ -33,27 +28,12 @@ const articles = [
       "Vision de l’Union Africaine pour un développement éthique et inclusif de l’IA sur le continent.",
   },
   {
-    title: "ARTIFICIAL INTELLIGENCE, A DRIVING FORCE FOR CHANGE IN AFRICA",
-    source: "AFD",
-    url: "https://www.afd.fr/en/Artificial-intelligence-Africa",
-    summary:
-      "L'IA comme levier de transformation économique et sociale en Afrique, selon l’AFD.",
-  },
-  {
     title:
-      "Au Rwanda, l’Ircad Africa forme les médecins africains à la chirurgie de pointe",
-    source: "Le Monde",
-    url: "https://www.lemonde.fr/afrique/article/2024/08/28/au-rwanda-l-ircad-africa-forme-les-medecins-africains-a-la-chirurgie-de-pointe_6297729_3212.html",
+      "Top 5 des applications de l’IA qui transforment l’agriculture et la santé en Afrique",
+    source: "Jangaan Tech",
+    url: "https://jangaantech.com/top-5-des-applications-de-lia-qui-transforment-lagriculture-et-la-sante-en-afrique/",
     summary:
-      "Un centre d’excellence forme les praticiens africains aux techniques chirurgicales avancées.",
-  },
-  {
-    title:
-      "Au Maroc, le centre AI Movement met l’intelligence artificielle au service du continent africain",
-    source: "Le Monde",
-    url: "https://www.lemonde.fr/afrique/article/2024/03/21/au-maroc-le-centre-ai-movement-met-l-intelligence-artificielle-au-service-du-continent-africain_6223333_3212.html",
-    summary:
-      "Le Maroc se positionne comme hub africain de l’innovation en intelligence artificielle.",
+      "Les applications de l’IA révolutionnent les secteurs agricoles et de santé en Afrique, apportant des solutions innovantes pour améliorer la productivité et l’accès aux soins.",
   },
   {
     title: "GITEX Africa",
@@ -63,29 +43,38 @@ const articles = [
       "Le plus grand salon tech d’Afrique réunissant startups, gouvernements et investisseurs.",
   },
   {
+    title: "Les défis de l’IA « made in Africa »",
+    source: "Le Point",
+    url: "https://www.lepoint.fr/sciences-nature/les-defis-de-l-ia-made-in-africa-15-02-2025-2582480_1924.php#11",
+    summary:
+      "Les défis liés à l’IA en Afrique, incluant les obstacles technologiques, éthiques et économiques à surmonter pour que l’Afrique devienne un acteur clé dans l'IA.",
+  },
+  {
+    title:
+      "L'Intelligence artificielle en Afrique potentiel de développement économique défis a relever",
+    source: "Nations Unies Commission économique pour l'Afrique",
+    url: "https://repository.uneca.org/handle/10855/50183#:~:text=La%20partie%20consacrée%20à%20l,au%20PIB%20d'ici%202030.",
+    summary:
+      "Un rapport sur les enjeux et les opportunités de l'IA pour l'Afrique, mettant en lumière les mesures nécessaires pour que l'IA stimule la croissance économique sur le continent.",
+  },
+  {
     title: "Crop's Talk, une application mobile de conseils agricoles",
     source: "Agri Digital",
     url: "https://agridigitale.tg/article/crops-talk-une-application-mobile-de-conseils-agricoles",
     summary:
       "Une appli qui connecte les agriculteurs africains à des conseils pratiques et personnalisés.",
   },
-  {
-    title:
-      "Challenge App Afrique : la Tunisienne Rabeb Fersi lauréate pour son projet 'Crop's Talk'",
-    source: "France 24",
-    url: "https://www.france24.com/fr/afrique/20230411-challenge-app-afrique-la-tunisienne-rabeb-fersi-lauréate-pour-son-projet-crop-s-talk",
-    summary:
-      "Le projet 'Crop’s Talk' primé pour son impact sur l’agriculture connectée en Afrique.",
-  },
 ];
 
 const MotionCard = motion(Card);
 
 const Section = ({
+  id,
   icon,
   title,
   children,
 }: {
+  id: string;
   icon: React.ReactNode;
   title: string;
   children: React.ReactNode;
@@ -108,145 +97,31 @@ const Section = ({
         </Stack>
         <Divider sx={{ mb: 2 }} />
         <Box sx={{ typography: "body1" }}>{children}</Box>
+        <Divider sx={{ mt: 2, mb: 2 }} />
+        <Typography variant="h6">{articles[0 + Number(id)].title}</Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+          {articles[0 + Number(id)].summary}
+        </Typography>
+        <Typography
+          variant="caption"
+          color="text.secondary"
+          sx={{ mt: 2, display: "block" }}
+        >
+          Source : {articles[0 + Number(id)].source}
+        </Typography>
+        <Button
+          size="small"
+          href={articles[0 + Number(id)].url}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="outlined"
+        >
+          Lire l’article
+        </Button>
       </CardContent>
     </Card>
   </MotionCard>
 );
-
-const ArticleList = () => {
-  const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState("right");
-  const [animating, setAnimating] = useState(false);
-  const startX = useRef<number | null>(null);
-  const isDragging = useRef(false);
-
-  const handleNext = () => {
-    if (animating) return;
-    setDirection("right");
-    setAnimating(true);
-    setTimeout(() => {
-      setIndex((prev) => (prev + 1) % articles.length);
-      setAnimating(false);
-    }, 200);
-  };
-
-  const handlePrev = () => {
-    if (animating) return;
-    setDirection("left");
-    setAnimating(true);
-    setTimeout(() => {
-      setIndex((prev) => (prev - 1 + articles.length) % articles.length);
-      setAnimating(false);
-    }, 200);
-  };
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    isDragging.current = true;
-    startX.current = e.clientX;
-  };
-
-  const handleMouseUp = (e: React.MouseEvent) => {
-    if (!isDragging.current) return;
-    if (!startX.current) return;
-    const deltaX = e.clientX - startX.current;
-    if (deltaX > 50) handlePrev();
-    else if (deltaX < -50) handleNext();
-    isDragging.current = false;
-  };
-
-  const handleMouseLeave = () => {
-    isDragging.current = false;
-  };
-
-  const article = articles[index];
-
-  const slideStyle = {
-    transition: "transform 0.2s ease, opacity 0.2s ease",
-    transform:
-      animating && direction === "right"
-        ? "translateX(30px)"
-        : animating && direction === "left"
-        ? "translateX(-30px)"
-        : "translateX(0)",
-    opacity: animating ? 0 : 1,
-  };
-
-  return (
-    <Box
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseLeave}
-      sx={{
-        display: "flex",
-        width: "100%",
-        justifyContent: "center",
-        alignItems: "center",
-        mx: "auto",
-        mt: 4,
-        position: "relative",
-        cursor: "grab",
-        userSelect: "none",
-        height: "300px",
-      }}
-    >
-      <Card
-        sx={{
-          display: "flex",
-          width: "80%",
-          flexDirection: "column",
-          ...slideStyle,
-        }}
-      >
-        <CardContent>
-          <Typography variant="h6">{article.title}</Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-            {article.summary}
-          </Typography>
-          <Typography
-            variant="caption"
-            color="text.secondary"
-            sx={{ mt: 2, display: "block" }}
-          >
-            Source : {article.source}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button
-            size="small"
-            href={article.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="outlined"
-          >
-            Lire l’article
-          </Button>
-        </CardActions>
-      </Card>
-      <IconButton
-        onClick={handlePrev}
-        sx={{
-          position: "absolute",
-          top: "50%",
-          left: 0,
-          transform: "translateY(-50%)",
-        }}
-      >
-        <ArrowBackIos />
-      </IconButton>
-      <IconButton
-        onClick={handleNext}
-        sx={{
-          position: "absolute",
-          top: "50%",
-          right: 0,
-          transform: "translateY(-50%)",
-        }}
-      >
-        <ArrowForwardIos />
-      </IconButton>
-    </Box>
-  );
-};
 
 const TechMonitoring = () => {
   const { mode } = useColorScheme();
@@ -315,6 +190,7 @@ const TechMonitoring = () => {
             </Typography>
 
             <Section
+              id="0"
               icon={<EmojiObjects />}
               title="🧭 Stratégies et politiques publiques"
             >
@@ -333,6 +209,7 @@ const TechMonitoring = () => {
             </Section>
 
             <Section
+              id="1"
               icon={<Public />}
               title="🌍 Cas d’usage et innovations locales"
             >
@@ -353,6 +230,7 @@ const TechMonitoring = () => {
             </Section>
 
             <Section
+              id="2"
               icon={<RocketLaunch />}
               title="🚀 Écosystème et dynamique entrepreneuriale"
             >
@@ -368,7 +246,7 @@ const TechMonitoring = () => {
               économique croissant.
             </Section>
 
-            <Section icon={<Warning />} title="⚠️ Défis à relever">
+            <Section id="3" icon={<Warning />} title="⚠️ Défis à relever">
               <strong>Infrastructures :</strong> Le manque d’accès à des
               infrastructures technologiques adéquates freine le déploiement de
               l’IA dans certaines régions.
@@ -385,6 +263,7 @@ const TechMonitoring = () => {
             </Section>
 
             <Section
+              id="4"
               icon={<Visibility />}
               title="🔮 Perspectives et potentiel économique"
             >
@@ -397,6 +276,7 @@ const TechMonitoring = () => {
             </Section>
 
             <Section
+              id="5"
               icon={<Grass />}
               title="🌱 Exemple de projet IA en Afrique : Crop’s Talk – Tunisie"
             >
@@ -412,7 +292,6 @@ const TechMonitoring = () => {
               tout en augmentant la productivité. L’objectif est désormais de{" "}
               <strong>déployer cette solution à l’échelle continentale</strong>.
             </Section>
-            <ArticleList />
           </Container>
         </Box>
       </Box>
