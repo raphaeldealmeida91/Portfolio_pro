@@ -21,6 +21,9 @@ const Skills = () => {
     DevOpsSkills,
     ToolsVirtualSkills,
     ToolsLogicielSkills,
+    ProtocolSkills,
+    ConfigurationNetworkSkills,
+    ScriptingSkills,
   } = useSkills();
 
   return (
@@ -111,6 +114,11 @@ const Skills = () => {
           <BoxSkills data={DevOpsSkills} />
           <BoxSkills data={ToolsVirtualSkills} />
           <BoxSkills data={ToolsLogicielSkills} />
+        </Box>
+        <Box sx={BoxRowParentSkills}>
+          <BoxSkills data={ProtocolSkills} />
+          <BoxSkills data={ConfigurationNetworkSkills} />
+          <BoxSkills data={ScriptingSkills} />
         </Box>
       </Box>
     </>

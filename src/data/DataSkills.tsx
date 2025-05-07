@@ -64,7 +64,7 @@ export const useSkills = () => {
 
     DevOpsSkills: {
       title: "DevOps",
-      items: ["Docker", "Apache", "Nginx", "Prometheus", "Grafana", "VNC"],
+      items: ["Docker", "Apache", "Nginx", "Prometheus", "Grafana"],
     },
 
     ToolsVirtualSkills: {
@@ -75,6 +75,21 @@ export const useSkills = () => {
     ToolsLogicielSkills: {
       title: t("toolsLogiciel"),
       items: ["VMware", "Virtual Box", "UTM"],
+    },
+
+    ProtocolSkills: {
+      title: t("protocols"),
+      items: ["SSH", "TCP/IP", "RDP", "VNC"],
+    },
+
+    ConfigurationNetworkSkills: {
+      title: t("configNetwork"),
+      items: ["DNS", "DHCP", "OSPF", "ACL", "VLAN", "NAT", "HSRP", "VTP"],
+    },
+
+    ScriptingSkills: {
+      title: "Scripting",
+      items: ["Bash", "Python", "JavaScript"],
     },
   };
 };

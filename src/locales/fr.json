@@ -50,5 +50,7 @@
   "project2Doc": "Projet 2 - Documentation technique",
   "projectDev": "Développement",
   "projectNet": "Systèmes & Réseaux",
-  "technologyMonitoring": "Veille technologique"
+  "technologyMonitoring": "Veille technologique",
+  "protocols": "Protocoles",
+  "configNetwork": "Configuration Réseaux"
 }
