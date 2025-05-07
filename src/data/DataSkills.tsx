@@ -79,7 +79,7 @@ export const useSkills = () => {
 
     ProtocolSkills: {
       title: t("protocols"),
-      items: ["SSH", "TCP/IP", "RDP", "VNC"],
+      items: ["SSH", "SSL", "HTTP", "TCP/IP", "RDP", "VNC"],
     },
 
     ConfigurationNetworkSkills: {
