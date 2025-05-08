@@ -9,8 +9,8 @@ import {
 import Me from "../assets/raphael_de_almeida.jpeg";
 import { useTranslation } from "react-i18next";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
-import CVPDF from "/RaphaelDeAlmeida.pdf";
-import TableauSynthesePDF from "/TableauDeSynthese(E5).pdf";
+import CVDEVPDF from "/DEALMEIDARaphaelDev.pdf";
+import CVSYSTEMNETWORKPDF from "/DEALMEIDARaphaelAdminSys&Res.pdf";
 
 const Home = () => {
   const { mode } = useColorScheme();
@@ -168,19 +168,19 @@ const Home = () => {
           <Box
             sx={{
               display: "flex",
-              width: { xs: "70%", md: "80%" },
+              width: { xs: "70%", md: "100%" },
               mb: 3,
               justifyContent: { xs: "center", md: "flex-start" },
-              flexDirection: { xs: "column", md: "row" },
+              flexDirection: { xs: "column", lg: "row" },
               gap: { xs: 4, md: 2 },
             }}
           >
             <Slide in={true} direction="left" timeout={500}>
               <Button
-                id="btn-download-cv"
+                id="btn-download-cv-dev"
                 startIcon={<FileDownloadIcon />}
                 variant="contained"
-                onClick={() => handleOpenFile(CVPDF)}
+                onClick={() => handleOpenFile(CVDEVPDF)}
                 sx={{
                   display: "flex",
                   backgroundColor: "rgb(76, 86, 106)",
@@ -188,15 +188,15 @@ const Home = () => {
                   textTransform: "initial",
                 }}
               >
-                {t("cv")}
+                {t("cvDev")}
               </Button>
             </Slide>
             <Slide in={true} direction="left" timeout={500}>
               <Button
-                id="btn-download-tableSynthese"
+                id="btn-download-cv-system-network"
                 startIcon={<FileDownloadIcon />}
                 variant="contained"
-                onClick={() => handleOpenFile(TableauSynthesePDF)}
+                onClick={() => handleOpenFile(CVSYSTEMNETWORKPDF)}
                 sx={{
                   display: "flex",
                   backgroundColor: "rgb(76, 86, 106)",
@@ -204,7 +204,7 @@ const Home = () => {
                   textTransform: "initial",
                 }}
               >
-                {t("tableSynthese")}
+                {t("cvSys&Res")}
               </Button>
             </Slide>
           </Box>

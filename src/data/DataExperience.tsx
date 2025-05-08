@@ -45,5 +45,5 @@ export const SupSchool2 = {
   title:
     "UPEC - BUT 3ème année Réseaux et Télécommunications, Parcours Cybersécurité",
   date: "2025 - 2026",
-  content: `J'ai été admis à l'Université Paris-Est Créetil, en 3ème année de BUT Réseaux et Télécommunications, Parcours Cybersécurité.`,
+  content: `J'ai été admis à l'Université Paris-Est Créteil, en 3ème année de BUT Réseaux et Télécommunications, Parcours Cybersécurité.`,
 };

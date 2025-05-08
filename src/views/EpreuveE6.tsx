@@ -11,6 +11,7 @@ import Project2PDF from "/projet-2.pdf";
 import Project2PDFDoc from "/projet-2-doc.pdf";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import { useTranslation } from "react-i18next";
+import TableauSynthesePDF from "/TableauDeSynthese(E5).pdf";
 
 const EpreuveE6 = () => {
   const { mode } = useColorScheme();
@@ -151,6 +152,34 @@ const EpreuveE6 = () => {
             }}
           >
             {t("project2Doc")}
+          </Button>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
+            width: "80%",
+          }}
+        >
+          <Typography sx={{ fontWeight: "bold", display: "flex" }} variant="h6">
+            Tableau de Synthèse E5
+          </Typography>
+          <Button
+            id="btn-download-project2-doc"
+            startIcon={<FileDownloadIcon />}
+            variant="contained"
+            onClick={() => handleOpenProjects(TableauSynthesePDF)}
+            sx={{
+              display: "flex",
+              backgroundColor: "rgb(76, 86, 106)",
+              color: "#F1F1F1",
+              textTransform: "initial",
+              mt: 2,
+            }}
+          >
+            {t("tableSynthese")}
           </Button>
         </Box>
       </Box>
