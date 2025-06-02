@@ -9,8 +9,7 @@ import {
 import Me from "../assets/raphael_de_almeida.jpeg";
 import { useTranslation } from "react-i18next";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
-import CVDEVPDF from "/DEALMEIDARaphaelDev.pdf";
-import CVSYSTEMNETWORKPDF from "/DEALMEIDARaphaelAdminSys&Res.pdf";
+import CVPDF from "/DEALMEIDARaphaelCVDevOps.pdf";
 
 const Home = () => {
   const { mode } = useColorScheme();
@@ -180,7 +179,7 @@ const Home = () => {
                 id="btn-download-cv-dev"
                 startIcon={<FileDownloadIcon />}
                 variant="contained"
-                onClick={() => handleOpenFile(CVDEVPDF)}
+                onClick={() => handleOpenFile(CVPDF)}
                 sx={{
                   display: "flex",
                   backgroundColor: "rgb(76, 86, 106)",
@@ -188,23 +187,7 @@ const Home = () => {
                   textTransform: "initial",
                 }}
               >
-                {t("cvDev")}
-              </Button>
-            </Slide>
-            <Slide in={true} direction="left" timeout={500}>
-              <Button
-                id="btn-download-cv-system-network"
-                startIcon={<FileDownloadIcon />}
-                variant="contained"
-                onClick={() => handleOpenFile(CVSYSTEMNETWORKPDF)}
-                sx={{
-                  display: "flex",
-                  backgroundColor: "rgb(76, 86, 106)",
-                  color: "#F1F1F1",
-                  textTransform: "initial",
-                }}
-              >
-                {t("cvSys&Res")}
+                {t("cv")}
               </Button>
             </Slide>
           </Box>

@@ -55,7 +55,7 @@ const Footer = () => {
         >
           <Box
             onClick={() =>
-              window.open("https://github.com/Raphalinho91", "_blank")
+              window.open("https://github.com/raphaeldealmeida91", "_blank")
             }
             sx={{
               display: "flex",

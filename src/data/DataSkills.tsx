@@ -37,6 +37,8 @@ export const useSkills = () => {
         "Google API",
         "Azure API",
         "OpenAi API",
+        "Jira API",
+        "Stripe API",
       ],
     },
 
@@ -59,12 +61,21 @@ export const useSkills = () => {
 
     ToolsEquipSkills: {
       title: t("tools"),
-      items: ["Jira", "Github", "Trello"],
+      items: [
+        "Jira",
+        "Confluence",
+        "BitBucket",
+        "Git",
+        "Github",
+        "Trello",
+        "Figma",
+        "Canva",
+      ],
     },
 
     DevOpsSkills: {
       title: "DevOps",
-      items: ["Docker", "Apache", "Nginx", "Prometheus", "Grafana"],
+      items: ["Docker", "Apache", "Nginx", "Prometheus", "Grafana", "Jenkins"],
     },
 
     ToolsVirtualSkills: {
